@@ -1,7 +1,6 @@
 package org.household.entities.electricalDevice
 
 import org.household.entities.electricalDevice.interfaces.IElectricalDeviceRepository
-import org.household.entities.powerUnit.PowerUnitEntity
 import org.isc.utils.genericCrudl.services.RepositoryService
 import org.isc.utils.models.CurrentUser
 import org.springframework.beans.factory.annotation.Autowired
@@ -20,4 +19,3 @@ class ElectricalDeviceRepository @Autowired constructor(
         return repository.findAllBySmartHomeId(smartHomeId = smartHomeId)
     }
 }
-

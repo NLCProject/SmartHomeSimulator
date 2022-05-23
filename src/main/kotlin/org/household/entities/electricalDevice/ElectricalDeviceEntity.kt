@@ -43,4 +43,34 @@ class ElectricalDeviceEntity : IscEntity() {
     @ManyToOne(cascade = [CascadeType.MERGE])
     @JoinColumn(name = "smart_home_id")
     lateinit var smartHome: SmartHomeEntity
+
+    /**
+     *
+     */
+    @Column
+    var name: String = String()
+
+    /**
+     *
+     */
+    @Column
+    var currentPowerConsumption: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var maxPowerConsumption: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var enabled: Boolean = false
+
+    /**
+     *
+     */
+    @Enumerated(value = EnumType.STRING)
+    var type: ElectricalDevice = ElectricalDevice.Other
 }

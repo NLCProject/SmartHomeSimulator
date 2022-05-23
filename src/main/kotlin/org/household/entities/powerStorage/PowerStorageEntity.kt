@@ -43,4 +43,40 @@ class PowerStorageEntity : IscEntity() {
     @ManyToOne(cascade = [CascadeType.MERGE])
     @JoinColumn(name = "smart_home_id")
     lateinit var smartHome: SmartHomeEntity
+
+    /**
+     *
+     */
+    @Column
+    var name: String = String()
+
+    /**
+     *
+     */
+    @Column
+    var currentChargingRate: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var maxChargingRate: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var maxPower: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var currentPower: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var enabled: Boolean = false
 }

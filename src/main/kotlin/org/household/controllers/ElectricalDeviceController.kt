@@ -6,8 +6,6 @@ import org.household.entities.electricalDevice.ElectricalDeviceFilterService
 import org.household.entities.electricalDevice.ElectricalDeviceModelService
 import org.household.entities.electricalDevice.ElectricalDeviceService
 import org.household.services.authentication.interfaces.IAuthenticationService
-import org.isc.utils.enums.Feature
-import org.isc.utils.enums.Role
 import org.isc.utils.genericCrudl.controller.CrossOriginData
 import org.isc.utils.genericCrudl.controller.GenericController
 import org.springframework.beans.factory.annotation.Autowired

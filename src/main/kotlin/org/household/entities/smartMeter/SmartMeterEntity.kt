@@ -40,6 +40,42 @@ class SmartMeterEntity : IscEntity() {
     /**
      *
      */
+    @Column
+    var name: String = String()
+
+    /**
+     *
+     */
+    @Column
+    var powerExported: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var powerImported: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var currentFlowRate: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var maxFlowRate: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var flowDirection: FlowDirection = FlowDirection.Export
+
+    /**
+     *
+     */
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "smart_home_id")
     lateinit var smartHome: SmartHomeEntity

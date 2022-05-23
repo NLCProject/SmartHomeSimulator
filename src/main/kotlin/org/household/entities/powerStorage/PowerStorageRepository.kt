@@ -1,7 +1,6 @@
 package org.household.entities.powerStorage
 
 import org.household.entities.powerStorage.interfaces.IPowerStorageRepository
-import org.household.entities.powerUnit.PowerUnitEntity
 import org.isc.utils.genericCrudl.services.RepositoryService
 import org.isc.utils.models.CurrentUser
 import org.springframework.beans.factory.annotation.Autowired
@@ -20,4 +19,3 @@ class PowerStorageRepository @Autowired constructor(
         return repository.findAllBySmartHomeId(smartHomeId = smartHomeId)
     }
 }
-

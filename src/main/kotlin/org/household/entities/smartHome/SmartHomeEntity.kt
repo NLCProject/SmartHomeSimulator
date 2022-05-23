@@ -44,6 +44,12 @@ class SmartHomeEntity : IscEntity() {
     /**
      *
      */
+    @Column
+    var name: String = String()
+
+    /**
+     *
+     */
     @OneToMany(cascade = [CascadeType.MERGE], mappedBy = "smartHome")
     var electricalDevices: List<ElectricalDeviceEntity> = emptyList()
 

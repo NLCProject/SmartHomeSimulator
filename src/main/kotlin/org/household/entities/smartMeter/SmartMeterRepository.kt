@@ -1,6 +1,5 @@
 package org.household.entities.smartMeter
 
-import org.household.entities.powerUnit.PowerUnitEntity
 import org.household.entities.smartMeter.interfaces.ISmartMeterRepository
 import org.isc.utils.genericCrudl.services.RepositoryService
 import org.isc.utils.models.CurrentUser
@@ -21,4 +20,3 @@ class SmartMeterRepository @Autowired constructor(
         return repository.findBySmartHomeId(smartHomeId = smartHomeId)
     }
 }
-

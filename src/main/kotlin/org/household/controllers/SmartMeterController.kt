@@ -43,4 +43,3 @@ class SmartMeterController @Autowired constructor(
             modelService.findBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
         }
 }
-

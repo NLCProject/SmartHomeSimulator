@@ -43,4 +43,3 @@ class PowerUnitController @Autowired constructor(
             modelService.findAllBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
         }
 }
-

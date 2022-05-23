@@ -38,6 +38,7 @@ class SmartHomeService @Autowired constructor(
         entityValidationService.checkIfEmptyAndThrow(list = entity.powerChargers, required = false)
         entityValidationService.checkIfEmptyAndThrow(list = entity.powerStorages, required = false)
         entityValidationService.checkIfEmptyAndThrow(list = entity.powerUnits, required = false)
+
         if (entity.smartMeter != null)
             throw Exception("Smart meter still attached")
     }

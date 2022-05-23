@@ -40,6 +40,30 @@ class PowerUnitEntity : IscEntity() {
     /**
      *
      */
+    @Column
+    var name: String = String()
+
+    /**
+     *
+     */
+    @Column
+    var maxPowerGeneration: Double = 0.0
+
+    /**
+     *
+     */
+    @Column
+    var currentPowerGeneration: Double = 0.0
+
+    /**
+     *
+     */
+    @Enumerated(value = EnumType.STRING)
+    var type: PowerUnit = PowerUnit.Other
+
+    /**
+     *
+     */
     @ManyToOne(cascade = [CascadeType.MERGE])
     @JoinColumn(name = "smart_home_id")
     lateinit var smartHome: SmartHomeEntity
