@@ -1,5 +1,6 @@
 package org.household.entities.smartMeter
 
+import org.household.entities.smartHome.SmartHomeEntity
 import org.isc.utils.genericCrudl.models.IscEntity
 import org.isc.utils.utils.Ids
 import javax.persistence.*
@@ -35,4 +36,10 @@ class SmartMeterEntity : IscEntity() {
      */
     @Column
     override var timestampLastModified: Long = 0
+
+    /**
+     *
+     */
+    @OneToOne(mappedBy = "smartMeter")
+    lateinit var smartHome: SmartHomeEntity
 }
