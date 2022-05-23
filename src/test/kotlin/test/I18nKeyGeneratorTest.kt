@@ -18,7 +18,7 @@ class I18nKeyGeneratorTest {
             snackbarFunctions = emptyList(),
             additionalI18nKeys = emptyList(),
             i18nKeysToIgnore = emptyList(),
-            topLevelFoldersToInclude = emptyList()
+            topLevelFoldersToInclude = listOf("toolbar")
         )
 
         assertFalse(I18nKeyGenerator().hasDuplicatedKeys(pathToAssets = pathToAssets))
