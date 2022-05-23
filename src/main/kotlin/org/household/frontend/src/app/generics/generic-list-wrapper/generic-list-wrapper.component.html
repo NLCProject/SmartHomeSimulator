@@ -9,7 +9,6 @@
 
 <button mat-fab
         class="action-bar-first"
-        *ngIf="!disableAddButton"
         (click)="routeToAddDialog()"
         [class.spinner]="isLoading()"
         [disabled]="isLoading()">

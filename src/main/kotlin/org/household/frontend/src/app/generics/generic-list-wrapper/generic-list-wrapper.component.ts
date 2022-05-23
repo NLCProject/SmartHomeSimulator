@@ -1,6 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {RestHelperService} from "../../services/rest-helper.service";
-import {Subject} from "rxjs";
 import {NamedModel} from "../../models/NamedModel";
 import {TranslationService} from "../../services/translation.service";
 import {Router} from "@angular/router";
@@ -15,33 +14,16 @@ export class GenericListWrapperComponent implements OnInit {
   constructor(
     private translationService: TranslationService,
     private router: Router
-  ) {
-    this.reloadModels?.subscribe(() => {
-      this.page = 0;
-      this.findAllPageable();
-    });
-  }
-
-  @Input()
-  public reloadModels: Subject<void> = null;
+  ) { }
 
   @Input()
   public service: RestHelperService<any, any>;
 
   @Input()
-  public disableAddButton = false;
-
-  @Input()
   private loading = false;
 
   @Input()
-  public routerPath: string = null;
-
-  @Input()
-  public alternativeAddRouterPath: string = null;
-
-  @Output()
-  public loadingChange = new EventEmitter<boolean>();
+  public routerPath: string;
 
   private page = 0;
   private loadingDomain = true;
@@ -68,11 +50,7 @@ export class GenericListWrapperComponent implements OnInit {
   }
 
   public routeToAddDialog(): void {
-    if (this.alternativeAddRouterPath) {
-      this.router.navigate([`/${this.alternativeAddRouterPath}`]);
-    } else {
-      this.router.navigate([`/${this.routerPath}/details`]);
-    }
+    this.router.navigate([`/${this.routerPath}/details`]);
   }
 
   private findAllPageable(): void {

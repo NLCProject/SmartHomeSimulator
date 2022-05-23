@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center center">
   <div class="spacer" *ngIf="(!models || models?.length == 0) || loading"></div>
   <mat-spinner *ngIf="loading"></mat-spinner>
-  <h1 *ngIf="(!models || models?.length == 0) && !loading">{{ overwriteNoEntryText | translate }}</h1>
+  <h1 *ngIf="(!models || models?.length == 0) && !loading">{{ I18nKey[I18nKey.NoEntries] | translate }}</h1>
 </div>
 
 <button mat-fab *ngIf="isVisible" (click)="toTop()" class="return-to-top">

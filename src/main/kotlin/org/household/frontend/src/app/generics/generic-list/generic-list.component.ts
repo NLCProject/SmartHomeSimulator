@@ -21,16 +21,10 @@ export class GenericListComponent {
   public loading = true;
 
   @Input()
-  public overwriteNoEntryText = I18nKey[I18nKey.NoEntries];
-
-  @Input()
   public routerPath: string = null;
 
   @Output()
   private newPage: EventEmitter<number> = new EventEmitter();
-
-  @Output()
-  private clickOnElement: EventEmitter<NamedModel> = new EventEmitter();
 
   public I18nKey = I18nKey;
   public isVisible = false;
@@ -61,8 +55,6 @@ export class GenericListComponent {
   }
 
   public openDetails(model: NamedModel): void {
-    this.clickOnElement.emit(model);
-
     if (!this.routerPath || !model) {
       return;
     }

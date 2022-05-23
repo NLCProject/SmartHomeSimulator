@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,6 +58,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    InfiniteScrollModule,
     FlexLayoutModule,
     FormsModule,
     MatInputModule,
