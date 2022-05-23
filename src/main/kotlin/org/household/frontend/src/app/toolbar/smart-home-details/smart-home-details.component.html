@@ -1,28 +1,13 @@
-<app-generic-details-return-button [titleI18nKey]="I18nKey[I18nKey.SmartHome]"
-                                   [parentRouterPath]="getRoute()"></app-generic-details-return-button>
+<div class="spacer"></div>
+<form [formGroup]="formGroup" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </div>
 
-<div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" style="width: 100%; height: 100%;">
-  <mat-tab-group [(selectedIndex)]="selectedTab" mat-align-tabs="center" style="height: 100%;">
-    <mat-tab label="{{ 'SmartHome' | translate }}">
-      <form [formGroup]="formGroup" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-        <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;">
-          <mat-spinner *ngIf="loading"></mat-spinner>
-        </div>
-
-        <mat-form-field>
-          <input matInput required placeholder="{{ 'Name' | translate }}" formControlName="name">
-        </mat-form-field>
-
-        <div class="max-spacer"></div>
-      </form>
-    </mat-tab>
-    <mat-tab label="{{ 'ElectricalDevices' | translate }}"><app-electrical-device-overview *ngIf="selectedTab === 1"></app-electrical-device-overview></mat-tab>
-    <mat-tab label="{{ 'PowerChargers' | translate }}"><app-power-charger-overview *ngIf="selectedTab === 2"></app-power-charger-overview></mat-tab>
-    <mat-tab label="{{ 'PowerStorages' | translate }}"><app-power-storage-overview *ngIf="selectedTab === 3"></app-power-storage-overview></mat-tab>
-    <mat-tab label="{{ 'PowerUnits' | translate }}"><app-power-unit-overview *ngIf="selectedTab === 4"></app-power-unit-overview></mat-tab>
-    <mat-tab label="{{ 'SmartMeters' | translate }}"><app-smart-meter-overview *ngIf="selectedTab === 5"></app-smart-meter-overview></mat-tab>
-  </mat-tab-group>
-</div>
+  <mat-form-field>
+    <input matInput required placeholder="{{ 'Name' | translate }}" formControlName="name">
+  </mat-form-field>
+</form>
 
 <app-generic-details-save-button
   [loading]="loading"

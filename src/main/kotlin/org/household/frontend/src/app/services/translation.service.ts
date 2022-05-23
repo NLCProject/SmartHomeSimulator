@@ -43,7 +43,7 @@ export class TranslationService {
   }
 
   public loadDefaultLanguage(): void {
-    this.translateService.use('en');
+    this.translateService.use('de');
   }
 
   public getTranslation(key: string): Observable<string> {

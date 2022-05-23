@@ -1,5 +1,4 @@
 import {Component, NgZone, OnInit} from '@angular/core';
-import { I18nKey } from 'src/app/models/I18nKey';
 import {RouterUtilService} from '../../services/router-util.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
@@ -25,27 +24,20 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
     private translationService: TranslationService,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private dialog: MatDialog,
-    private route: ActivatedRoute
+    private dialog: MatDialog
   ) {
     super(router, ngZone, location, 'smart-home', 0);
   }
 
-  public I18nKey = I18nKey;
   public formGroup: FormGroup;
   public loading = false;
   public id: string;
   public isVisible = false;
   public model: SmartHomeModel;
-  public selectedTab = 0;
-  private swipeCoordinate: [number, number];
-  private swipeTime = 0;
-  private numberTabs = 6;
 
   ngOnInit(): void {
     this.createForm();
     this.getId();
-    this.selectedTab = +JSON.parse(this.route.snapshot.paramMap.get('index'));
   }
 
   public updateModel(): void {
@@ -60,8 +52,8 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
     this.service.save(this.model).subscribe(
       response => {
         this.translationService.showSnackbar('Updated');
-        this.reloadDetailView(response.id);
         this.loading = false;
+        this.reloadDetailView(response.id);
       },
       error => {
         this.translationService.showSnackbarOnError(error);
@@ -121,6 +113,8 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
     this.formGroup.setValue({
       name: model.name
     });
+
+    this.loading = false;
   }
 
   private createForm(): void {
@@ -135,39 +129,5 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
     });
 
     this.loading = false;
-  }
-
-  public swipe(event: TouchEvent, when: string): void {
-    const coordinate: [number, number] = [event.changedTouches[0].clientX, event.changedTouches[0].clientY];
-    const time = new Date().getTime();
-
-    if (when === 'start') {
-      this.swipeCoordinate = coordinate;
-      this.swipeTime = time;
-    } else if (when === 'end') {
-      const direction = [coordinate[0] - this.swipeCoordinate[0], coordinate[1] - this.swipeCoordinate[1]];
-      const duration = time - this.swipeTime;
-
-      if (
-        duration < 1000 // Long enough
-        && Math.abs(direction[0]) > 30 // Long enough
-        && Math.abs(direction[0]) > Math.abs(direction[1] * 3) // Horizontal enough
-      ) {
-        const swipe = direction[0] < 0 ? 'next' : 'previous';
-        if (swipe === 'next') {
-          if (this.selectedTab < this.numberTabs - 1) {
-            this.selectedTab += 1;
-          } else {
-            this.selectedTab = 0;
-          }
-        } else if (swipe === 'previous') {
-          if (this.selectedTab === 0) {
-            this.selectedTab = this.numberTabs - 1;
-          } else {
-            this.selectedTab -= 1;
-          }
-        }
-      }
-    }
   }
 }

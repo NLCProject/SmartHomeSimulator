@@ -6,6 +6,8 @@ import {PowerStorageDetailsComponent} from './details/power-storage-details/powe
 import {PowerUnitDetailsComponent} from './details/power-unit-details/power-unit-details.component';
 import {SmartHomeDetailsComponent} from './toolbar/smart-home-details/smart-home-details.component';
 import {SmartMeterDetailsComponent} from './details/smart-meter-details/smart-meter-details.component';
+import {SmartHomeOverviewComponent} from "./toolbar/smart-home-overview/smart-home-overview.component";
+import {SmartHomeDetailsOverviewComponent} from "./toolbar/smart-home-details-overview/smart-home-details-overview.component";
 
 const routes: Routes = [
   {
@@ -22,10 +24,34 @@ const routes: Routes = [
     component: PowerUnitDetailsComponent
   }, {
     path: 'smart-home/details/:id',
-    component: SmartHomeDetailsComponent
+    component: SmartHomeDetailsOverviewComponent
   }, {
     path: 'smart-meter/details/:id',
     component: SmartMeterDetailsComponent
+  },   {
+    path: 'electrical-device/details',
+    component: ElectricalDeviceDetailsComponent
+  }, {
+    path: 'power-charger/details',
+    component: PowerChargerDetailsComponent
+  }, {
+    path: 'power-storage/details',
+    component: PowerStorageDetailsComponent
+  }, {
+    path: 'power-unit/details',
+    component: PowerUnitDetailsComponent
+  }, {
+    path: 'smart-home/details',
+    component: SmartHomeDetailsOverviewComponent
+  }, {
+    path: 'smart-meter/details',
+    component: SmartMeterDetailsComponent
+  }, {
+    path: 'smart-home/overview',
+    component: SmartHomeOverviewComponent
+  }, {
+    path: '**',
+    redirectTo: 'smart-home/overview'
   }
 ];
 

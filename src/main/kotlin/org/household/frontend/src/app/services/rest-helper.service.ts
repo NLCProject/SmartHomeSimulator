@@ -19,36 +19,38 @@ export abstract class RestHelperService<MODEL, ABSTRACTMODEL> {
     return `${environment.SERVER_URL}:8080/` + path;
   }
 
-  protected getHeadersWithoutCredentials(): { headers: HttpHeaders } {
+  protected getHeaders(): { headers: HttpHeaders } {
     return {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: '',
+        Id: ''
       })
     };
   }
 
   public save(model: MODEL): Observable<IdModel> {
     const url = `${this.getBaseUrl(this.path)}/save`;
-    return this.http.post<IdModel>(url, model, this.getHeadersWithoutCredentials());
+    return this.http.post<IdModel>(url, model, this.getHeaders());
   }
 
   public delete(id: string): Observable<void> {
     const url = `${this.getBaseUrl(this.path)}/delete?id=${id}`;
-    return this.http.post<void>(url, null, this.getHeadersWithoutCredentials());
+    return this.http.post<void>(url, null, this.getHeaders());
   }
 
   public findById(id: string): Observable<MODEL> {
     const url = `${this.getBaseUrl(this.path)}/findById?id=${id}`;
-    return this.http.get<MODEL>(url, this.getHeadersWithoutCredentials());
+    return this.http.get<MODEL>(url, this.getHeaders());
   }
 
   public findAll(): Observable<ABSTRACTMODEL[]> {
     const url = `${this.getBaseUrl(this.path)}/findAll`;
-    return this.http.get<ABSTRACTMODEL[]>(url, this.getHeadersWithoutCredentials());
+    return this.http.get<ABSTRACTMODEL[]>(url, this.getHeaders());
   }
 
   public findAllPageable(page: number): Observable<ABSTRACTMODEL[]> {
     const url = `${this.getBaseUrl(this.path)}/findAllPageable?page=${page}`;
-    return this.http.get<ABSTRACTMODEL[]>(url, this.getHeadersWithoutCredentials());
+    return this.http.get<ABSTRACTMODEL[]>(url, this.getHeaders());
   }
 }

@@ -23,7 +23,9 @@ class SmartHomeModelService @Autowired constructor(
         model.canBeDeleted = !entity.isUnitAttached()
     }
 
-    override fun createAbstractModel(entity: SmartHomeEntity, model: NamedModel, currentUser: CurrentUser) { }
+    override fun createAbstractModel(entity: SmartHomeEntity, model: NamedModel, currentUser: CurrentUser) {
+        model.firstLine.text = entity.name
+    }
 
     override fun findAllPageable(filter: FilterParameters, page: Int, currentUser: CurrentUser): List<NamedModel> =
         throw NotImplementedError()

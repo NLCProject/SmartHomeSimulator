@@ -6,7 +6,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import {HttpClient} from '@angular/common/http';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -36,6 +36,12 @@ import { GenericDetailsReturnButtonComponent } from './generics/generic-details-
 import { PromptComponent } from './shared/prompt/prompt.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
+import { SmartHomeOverviewComponent } from './toolbar/smart-home-overview/smart-home-overview.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import { SportsclubIconComponent } from './shared/sportsclub-icon/sportsclub-icon.component';
+import { SmartHomeDetailsOverviewComponent } from './toolbar/smart-home-details-overview/smart-home-details-overview.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -60,7 +66,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     GenericListWrapperComponent,
     GenericDetailsSaveButtonComponent,
     GenericDetailsReturnButtonComponent,
-    PromptComponent
+    PromptComponent,
+    SmartHomeOverviewComponent,
+    SportsclubIconComponent,
+    SmartHomeDetailsOverviewComponent
   ],
   imports: [
     AppRoutingModule,
@@ -69,15 +78,19 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     InfiniteScrollModule,
     FlexLayoutModule,
     FormsModule,
-    MatInputModule,
-    MatDialogModule,
-    MatSnackBarModule,
+    HttpClientModule,
     MatButtonModule,
+    MatDialogModule,
+    MatDividerModule,
     MatIconModule,
+    MatInputModule,
     MatListModule,
     MatMenuModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
     MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'de',

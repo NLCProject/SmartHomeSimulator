@@ -12,6 +12,6 @@ export class SmartMeterService extends RestHelperService<SmartMeterModel, NamedM
 
   public findBySmartHomeId(smartHomeId: string): Observable<SmartMeterModel> {
     const url = `${this.getBaseUrl(this.path)}/findBySmartHomeId?smartHomeId=${smartHomeId}`;
-    return this.http.get<SmartMeterModel>(url, this.getHeadersWithoutCredentials());
+    return this.http.get<SmartMeterModel>(url, this.getHeaders());
   }
 }

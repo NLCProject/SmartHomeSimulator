@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {SmartHomeService} from '../services/smart-home.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-toolbar',
@@ -9,6 +9,10 @@ import {SmartHomeService} from '../services/smart-home.service';
 export class ToolbarComponent {
 
   constructor(
-    public service: SmartHomeService
+    private router: Router
   ) { }
+
+  public navigateToHome(): void {
+    this.router.navigate(['/']);
+  }
 }

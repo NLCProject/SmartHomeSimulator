@@ -1,0 +1,13 @@
+<app-generic-details-return-button [titleI18nKey]="I18nKey[I18nKey.SmartHome]"
+                                   [parentRouterPath]="'smart-home'"></app-generic-details-return-button>
+
+<div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" style="width: 100%; height: 100%;">
+  <mat-tab-group [(selectedIndex)]="selectedTab" mat-align-tabs="center" style="height: 100%;">
+    <mat-tab label="{{ 'SmartHome' | translate }}"><app-smart-home-details *ngIf="selectedTab === 0"></app-smart-home-details></mat-tab>
+    <mat-tab label="{{ 'ElectricalDevices' | translate }}"><app-electrical-device-overview *ngIf="selectedTab === 1"></app-electrical-device-overview></mat-tab>
+    <mat-tab label="{{ 'PowerChargers' | translate }}"><app-power-charger-overview *ngIf="selectedTab === 2"></app-power-charger-overview></mat-tab>
+    <mat-tab label="{{ 'PowerStorages' | translate }}"><app-power-storage-overview *ngIf="selectedTab === 3"></app-power-storage-overview></mat-tab>
+    <mat-tab label="{{ 'PowerUnits' | translate }}"><app-power-unit-overview *ngIf="selectedTab === 4"></app-power-unit-overview></mat-tab>
+    <mat-tab label="{{ 'SmartMeters' | translate }}"><app-smart-meter-overview *ngIf="selectedTab === 5"></app-smart-meter-overview></mat-tab>
+  </mat-tab-group>
+</div>

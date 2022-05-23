@@ -12,6 +12,6 @@ export class ElectricalDeviceService extends RestHelperService<ElectricalDeviceM
 
   public findAllBySmartHomeId(smartHomeId: string): Observable<NamedModel[]> {
     const url = `${this.getBaseUrl(this.path)}/findAllBySmartHomeId?smartHomeId=${smartHomeId}`;
-    return this.http.get<NamedModel[]>(url, this.getHeadersWithoutCredentials());
+    return this.http.get<NamedModel[]>(url, this.getHeaders());
   }
 }
