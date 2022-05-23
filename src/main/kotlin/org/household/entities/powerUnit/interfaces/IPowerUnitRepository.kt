@@ -6,4 +6,10 @@ import org.isc.utils.genericCrudl.interfaces.ICrudlRepository
 /**
  *
  */
-interface IPowerUnitRepository : ICrudlRepository<PowerUnitEntity>
+interface IPowerUnitRepository : ICrudlRepository<PowerUnitEntity> {
+
+    /**
+     *
+     */
+    fun findAllBySmartHomeId(smartHomeId: String): List<PowerUnitEntity>
+}

@@ -10,14 +10,25 @@ import org.springframework.stereotype.Service
 
 @Service
 class SmartMeterModelService @Autowired constructor(
-    repositoryService: SmartMeterRepository,
-    filterService: SmartMeterFilterService
+    filterService: SmartMeterFilterService,
+    private val repositoryService: SmartMeterRepository
 ) : ModelService<SmartMeterModel, SmartMeterEntity>(
     repositoryService = repositoryService,
     filterService = filterService,
     modelClass = SmartMeterModel::class.java,
     abstractClass = NamedModel::class.java
 ) {
+
+    /**
+     *
+     */
+    fun findBySmartHomeId(smartHomeId: String, currentUser: CurrentUser): SmartMeterModel {
+        val optional = repositoryService.findBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
+        if (!optional.isPresent)
+            throw Exception("Smart meter with smart home ID '$smartHomeId' not found")
+
+        return convertToModel(entity = optional.get(), currentUser = currentUser)
+    }
 
     override fun createModel(entity: SmartMeterEntity, model: SmartMeterModel, currentUser: CurrentUser) { }
 

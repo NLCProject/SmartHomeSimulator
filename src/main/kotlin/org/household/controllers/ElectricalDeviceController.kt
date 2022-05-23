@@ -6,9 +6,12 @@ import org.household.entities.electricalDevice.ElectricalDeviceFilterService
 import org.household.entities.electricalDevice.ElectricalDeviceModelService
 import org.household.entities.electricalDevice.ElectricalDeviceService
 import org.household.services.authentication.interfaces.IAuthenticationService
+import org.isc.utils.enums.Feature
+import org.isc.utils.enums.Role
 import org.isc.utils.genericCrudl.controller.CrossOriginData
 import org.isc.utils.genericCrudl.controller.GenericController
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
@@ -20,9 +23,9 @@ import org.springframework.web.bind.annotation.*
 @CrossOrigin(origins = [CrossOriginData.origins], allowedHeaders = [CrossOriginData.allowedHeaders])
 class ElectricalDeviceController @Autowired constructor(
     entityService: ElectricalDeviceService,
-    modelService: ElectricalDeviceModelService,
     filterService: ElectricalDeviceFilterService,
-    userAuthenticationService: IAuthenticationService
+    private val modelService: ElectricalDeviceModelService,
+    private val userAuthenticationService: IAuthenticationService
 ) : GenericController<ElectricalDeviceModel, ElectricalDeviceEntity>(
     userAuthenticationService = userAuthenticationService,
     entityService = entityService,
@@ -30,4 +33,15 @@ class ElectricalDeviceController @Autowired constructor(
     modelService = modelService,
     rolesSave = emptyList(),
     rolesRead = emptyList()
-)
+) {
+
+    /**
+     *
+     */
+    @GetMapping("/findAllBySmartHomeId")
+    fun findAllBySmartHomeId(@RequestParam smartHomeId: String): ResponseEntity<*> =
+        exceptionHandler.executeGetOperation {
+            val currentUser = userAuthenticationService.isPermitted()
+            modelService.findAllBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
+        }
+}

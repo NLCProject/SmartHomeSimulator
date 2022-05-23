@@ -9,6 +9,7 @@ import org.household.services.authentication.interfaces.IAuthenticationService
 import org.isc.utils.genericCrudl.controller.CrossOriginData
 import org.isc.utils.genericCrudl.controller.GenericController
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
@@ -20,9 +21,9 @@ import org.springframework.web.bind.annotation.*
 @CrossOrigin(origins = [CrossOriginData.origins], allowedHeaders = [CrossOriginData.allowedHeaders])
 class PowerChargerController @Autowired constructor(
     entityService: PowerChargerService,
-    modelService: PowerChargerModelService,
     filterService: PowerChargerFilterService,
-    userAuthenticationService: IAuthenticationService
+    private val modelService: PowerChargerModelService,
+    private val userAuthenticationService: IAuthenticationService
 ) : GenericController<PowerChargerModel, PowerChargerEntity>(
     userAuthenticationService = userAuthenticationService,
     entityService = entityService,
@@ -30,4 +31,15 @@ class PowerChargerController @Autowired constructor(
     modelService = modelService,
     rolesSave = emptyList(),
     rolesRead = emptyList()
-)
+) {
+
+    /**
+     *
+     */
+    @GetMapping("/findAllBySmartHomeId")
+    fun findAllBySmartHomeId(@RequestParam smartHomeId: String): ResponseEntity<*> =
+        exceptionHandler.executeGetOperation {
+            val currentUser = userAuthenticationService.isPermitted()
+            modelService.findAllBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
+        }
+}

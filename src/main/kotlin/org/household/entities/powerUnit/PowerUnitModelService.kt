@@ -10,14 +10,21 @@ import org.springframework.stereotype.Service
 
 @Service
 class PowerUnitModelService @Autowired constructor(
-    repositoryService: PowerUnitRepository,
-    filterService: PowerUnitFilterService
+    filterService: PowerUnitFilterService,
+    private val repositoryService: PowerUnitRepository
 ) : ModelService<PowerUnitModel, PowerUnitEntity>(
     repositoryService = repositoryService,
     filterService = filterService,
     modelClass = PowerUnitModel::class.java,
     abstractClass = NamedModel::class.java
 ) {
+
+    /**
+     *
+     */
+    fun findAllBySmartHomeId(smartHomeId: String, currentUser: CurrentUser): List<NamedModel> = repositoryService
+        .findAllBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
+        .map { convertToAbstractModel(entity = it, currentUser = currentUser) }
 
     override fun createModel(entity: PowerUnitEntity, model: PowerUnitModel, currentUser: CurrentUser) { }
 

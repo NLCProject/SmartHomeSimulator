@@ -9,6 +9,7 @@ import org.household.services.authentication.interfaces.IAuthenticationService
 import org.isc.utils.genericCrudl.controller.CrossOriginData
 import org.isc.utils.genericCrudl.controller.GenericController
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
@@ -20,9 +21,9 @@ import org.springframework.web.bind.annotation.*
 @CrossOrigin(origins = [CrossOriginData.origins], allowedHeaders = [CrossOriginData.allowedHeaders])
 class SmartMeterController @Autowired constructor(
     entityService: SmartMeterService,
-    modelService: SmartMeterModelService,
     filterService: SmartMeterFilterService,
-    userAuthenticationService: IAuthenticationService
+    private val modelService: SmartMeterModelService,
+    private val userAuthenticationService: IAuthenticationService
 ) : GenericController<SmartMeterModel, SmartMeterEntity>(
     userAuthenticationService = userAuthenticationService,
     entityService = entityService,
@@ -30,4 +31,16 @@ class SmartMeterController @Autowired constructor(
     modelService = modelService,
     rolesSave = emptyList(),
     rolesRead = emptyList()
-)
+) {
+
+    /**
+     *
+     */
+    @GetMapping("/findBySmartHomeId")
+    fun findBySmartHomeId(@RequestParam smartHomeId: String): ResponseEntity<*> =
+        exceptionHandler.executeGetOperation {
+            val currentUser = userAuthenticationService.isPermitted()
+            modelService.findBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
+        }
+}
+
