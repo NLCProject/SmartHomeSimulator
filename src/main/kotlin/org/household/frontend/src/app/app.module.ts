@@ -27,10 +27,10 @@ import { PowerUnitDetailsComponent } from './details/power-unit-details/power-un
 import { SmartMeterDetailsComponent } from './details/smart-meter-details/smart-meter-details.component';
 import { GenericListComponent } from './generics/generic-list/generic-list.component';
 import { GenericListWrapperComponent } from './generics/generic-list-wrapper/generic-list-wrapper.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatDialogModule} from "@angular/material/dialog";
-import {MatInputModule} from "@angular/material/input";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);

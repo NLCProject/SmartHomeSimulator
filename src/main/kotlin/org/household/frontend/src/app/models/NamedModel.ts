@@ -6,16 +6,16 @@ import {IconModel} from './IconModel';
  */
 
 export class NamedModel {
-    userId: string = '';
+    userId = '';
     firstLine: NamedLineModel = null;
     secondLine: NamedLineModel = null;
     thirdLine: NamedLineModel = null;
-    dateParsed: string = '';
-    thumbnail: string = '';
+    dateParsed = '';
+    thumbnail = '';
     data: any = null;
     icons: IconModel[] = [];
-    id: string = '';
-    organisationId: string = '';
-    timestampCreated: number = 0;
-    timestampLastModified: number = 0;
+    id = '';
+    organisationId = '';
+    timestampCreated = 0;
+    timestampLastModified = 0;
 }

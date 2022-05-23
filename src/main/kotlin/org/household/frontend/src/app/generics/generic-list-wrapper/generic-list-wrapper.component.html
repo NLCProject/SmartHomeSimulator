@@ -1,17 +1,17 @@
-<div fxLayout="column" fxLayoutAlign="start center" style="height: 100%;">
+<div fxLayout='column' fxLayoutAlign='start center' style='height: 100%;'>
   <app-generic-list
-    [models]="models"
-    [loading]="isLoading()"
-    [routerPath]="routerPath"
-    (newPage)="newPage($event)">
+    [models]='models'
+    [loading]='isLoading()'
+    [routerPath]='routerPath'
+    (newPage)='newPage($event)'>
   </app-generic-list>
 </div>
 
 <button mat-fab
-        class="action-bar-first"
-        (click)="routeToAddDialog()"
-        [class.spinner]="isLoading()"
-        [disabled]="isLoading()">
+        class='action-bar-first'
+        (click)='routeToAddDialog()'
+        [class.spinner]='isLoading()'
+        [disabled]='isLoading()'>
   <mat-icon>add</mat-icon>
 </button>
 

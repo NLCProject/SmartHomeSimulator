@@ -5,7 +5,7 @@
  */
 
 export class IdModel {
-    id: string = '';
-    imageId: string = '';
-    documentId: string = '';
+    id = '';
+    imageId = '';
+    documentId = '';
 }

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
-import {I18nKey} from "../../models/I18nKey";
-import {NamedModel} from "../../models/NamedModel";
-import {Router} from "@angular/router";
+import {I18nKey} from '../../models/I18nKey';
+import {NamedModel} from '../../models/NamedModel';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-generic-list',

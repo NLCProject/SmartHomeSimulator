@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RestHelperService} from "../../services/rest-helper.service";
-import {NamedModel} from "../../models/NamedModel";
-import {TranslationService} from "../../services/translation.service";
-import {Router} from "@angular/router";
+import {RestHelperService} from '../../services/rest-helper.service';
+import {NamedModel} from '../../models/NamedModel';
+import {TranslationService} from '../../services/translation.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-generic-list-wrapper',
