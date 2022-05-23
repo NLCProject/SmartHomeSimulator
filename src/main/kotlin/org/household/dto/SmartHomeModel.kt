@@ -16,4 +16,9 @@ class SmartHomeModel : IscModel() {
      */
     @ValidateContent(type = ValidationType.StringNotEmpty)
     var name: String = String()
+
+    /**
+     *
+     */
+    var canBeDeleted: Boolean = false
 }

@@ -31,6 +31,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
+import { GenericDetailsSaveButtonComponent } from './generics/generic-details-save-button/generic-details-save-button.component';
+import { GenericDetailsReturnButtonComponent } from './generics/generic-details-return-button/generic-details-return-button.component';
+import { PromptComponent } from './shared/prompt/prompt.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatMenuModule} from '@angular/material/menu';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -52,7 +57,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     PowerUnitDetailsComponent,
     SmartMeterDetailsComponent,
     GenericListComponent,
-    GenericListWrapperComponent
+    GenericListWrapperComponent,
+    GenericDetailsSaveButtonComponent,
+    GenericDetailsReturnButtonComponent,
+    PromptComponent
   ],
   imports: [
     AppRoutingModule,
@@ -67,6 +75,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
     MatTabsModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({

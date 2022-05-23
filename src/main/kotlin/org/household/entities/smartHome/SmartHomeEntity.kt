@@ -76,4 +76,13 @@ class SmartHomeEntity : IscEntity() {
      */
     @OneToOne(mappedBy = "smartHome")
     var smartMeter: SmartMeterEntity? = null
+
+    /**
+     *
+     */
+    public fun isUnitAttached(): Boolean = electricalDevices.isNotEmpty() ||
+        powerChargers.isNotEmpty() ||
+        powerStorages.isNotEmpty() ||
+        powerUnits.isNotEmpty() ||
+        smartMeter != null
 }
