@@ -7,4 +7,10 @@ import org.isc.utils.genericCrudl.models.IscModel
  *
  */
 @GenerateTsModel
-class ElectricalDeviceModel : IscModel()
+class ElectricalDeviceModel : IscModel() {
+
+    /**
+     *
+     */
+    val smartHomeId: String = String()
+}

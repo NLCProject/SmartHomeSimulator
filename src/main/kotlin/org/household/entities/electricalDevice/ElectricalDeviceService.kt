@@ -1,6 +1,7 @@
 package org.household.entities.electricalDevice
 
 import org.household.dto.ElectricalDeviceModel
+import org.household.entities.smartHome.SmartHomeRepository
 import org.isc.utils.genericCrudl.models.Aspects
 import org.isc.utils.genericCrudl.services.EntityService
 import org.isc.utils.models.CurrentUser
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class ElectricalDeviceService @Autowired constructor(
+    private val smartHomeRepoService: SmartHomeRepository,
     repositoryService: ElectricalDeviceRepository
 ) : EntityService<ElectricalDeviceModel, ElectricalDeviceEntity>(
     entityClass = ElectricalDeviceEntity::class.java,
@@ -21,7 +23,10 @@ class ElectricalDeviceService @Autowired constructor(
         isPresent: Boolean,
         aspects: Aspects,
         currentUser: CurrentUser
-    ) { }
+    ) {
+        if (!isPresent)
+            entity.smartHome = smartHomeRepoService.findById(id = model.smartHomeId, currentUser = currentUser)
+    }
 
     override fun afterSave(
         model: ElectricalDeviceModel,

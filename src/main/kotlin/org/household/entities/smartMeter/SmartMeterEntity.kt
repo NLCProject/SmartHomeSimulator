@@ -40,6 +40,7 @@ class SmartMeterEntity : IscEntity() {
     /**
      *
      */
-    @OneToOne(mappedBy = "smartMeter")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "smart_home_id")
     lateinit var smartHome: SmartHomeEntity
 }
