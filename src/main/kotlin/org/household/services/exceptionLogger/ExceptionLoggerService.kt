@@ -1,7 +1,7 @@
 package org.household.services.exceptionLogger
 
-import org.household.entities.errorLog.ErrorLogService
 import org.household.dto.ErrorLogModel
+import org.household.entities.errorLog.ErrorLogService
 import org.isc.utils.enums.SportsclubExceptionI18nKey
 import org.isc.utils.genericCrudl.services.exceptionHandler.AbstractExceptionLogger
 import org.isc.utils.tests.CurrentUserFactory
