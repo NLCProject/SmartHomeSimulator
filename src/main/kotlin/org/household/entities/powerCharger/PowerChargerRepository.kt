@@ -14,8 +14,11 @@ class PowerChargerRepository @Autowired constructor(
     /**
      *
      */
-    fun findAllBySmartHomeId(smartHomeId: String, currentUser: CurrentUser): List<PowerChargerEntity> {
+    fun findAllBySmartHomeId(smartHomeId: String, page: Int, currentUser: CurrentUser): List<PowerChargerEntity> {
         checkFeatureAndThrow(currentUser = currentUser)
-        return repository.findAllBySmartHomeId(smartHomeId = smartHomeId)
+        return repository.findAllBySmartHomeId(
+            smartHomeId = smartHomeId,
+            pageable = paginationService.build(page = page)
+        )
     }
 }

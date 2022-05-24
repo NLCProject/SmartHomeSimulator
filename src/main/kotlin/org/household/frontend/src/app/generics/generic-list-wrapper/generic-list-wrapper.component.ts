@@ -25,6 +25,9 @@ export class GenericListWrapperComponent implements OnInit {
   @Input()
   public routerPath: string;
 
+  @Input()
+  public smartHomeId: string = null;
+
   private page = 0;
   private loadingDomain = true;
   public models: NamedModel[] = [];
@@ -37,7 +40,7 @@ export class GenericListWrapperComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.findAllPageable();
+    this.loadData();
   }
 
   public isLoading(): boolean {
@@ -46,11 +49,39 @@ export class GenericListWrapperComponent implements OnInit {
 
   public newPage(page: number): void {
     this.page = page;
-    this.findAllPageable();
+    this.loadData();
   }
 
   public routeToAddDialog(): void {
-    this.router.navigate([`/${this.routerPath}/details`]);
+    if (this.smartHomeId?.length > 0) {
+      this.router.navigate([`/${this.routerPath}/details?smartHomeId=${this.smartHomeId}`]);
+    } else {
+      this.router.navigate([`/${this.routerPath}/details`]);
+    }
+  }
+
+  private loadData(): void {
+    if (this.smartHomeId?.length > 0) {
+      this.findAllBySmartHomeId();
+    } else {
+      this.findAllPageable();
+    }
+  }
+
+  private findAllBySmartHomeId(): void {
+    this.loadingDomain = true;
+    this.service.findAllBySmartHomeId(this.page, this.smartHomeId).subscribe(
+        response => {
+          this.models = this.models.concat(response);
+          this.models = GenericListWrapperComponent.distinct(this.models);
+
+          this.loadingDomain = false;
+        },
+        error => {
+          this.translationService.showSnackbarOnError(error);
+          this.loadingDomain = false;
+        }
+    );
   }
 
   private findAllPageable(): void {

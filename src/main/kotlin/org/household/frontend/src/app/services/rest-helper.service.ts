@@ -29,6 +29,11 @@ export abstract class RestHelperService<MODEL, ABSTRACTMODEL> {
     };
   }
 
+  public findAllBySmartHomeId(page: number, smartHomeId: string): Observable<ABSTRACTMODEL[]> {
+    const url = `${this.getBaseUrl(this.path)}/findAllBySmartHomeId?smartHomeId=${smartHomeId}&page=${page}`;
+    return this.http.get<ABSTRACTMODEL[]>(url, this.getHeaders());
+  }
+
   public save(model: MODEL): Observable<IdModel> {
     const url = `${this.getBaseUrl(this.path)}/save`;
     return this.http.post<IdModel>(url, model, this.getHeaders());

@@ -1,18 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {ElectricalDeviceService} from "../../services/electrical-device.service";
 
 @Component({
   selector: 'app-electrical-device-overview',
   templateUrl: './electrical-device-overview.component.html',
   styleUrls: ['./electrical-device-overview.component.scss']
 })
-export class ElectricalDeviceOverviewComponent implements OnInit {
+export class ElectricalDeviceOverviewComponent {
 
-  constructor() { }
+  constructor(
+      public service: ElectricalDeviceService
+  ) { }
 
   @Input()
   public smartHomeId: string;
-
-  ngOnInit(): void {
-  }
-
 }

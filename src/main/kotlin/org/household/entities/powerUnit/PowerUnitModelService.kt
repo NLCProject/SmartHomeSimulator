@@ -22,9 +22,10 @@ class PowerUnitModelService @Autowired constructor(
     /**
      *
      */
-    fun findAllBySmartHomeId(smartHomeId: String, currentUser: CurrentUser): List<NamedModel> = repositoryService
-        .findAllBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
-        .map { convertToAbstractModel(entity = it, currentUser = currentUser) }
+    fun findAllBySmartHomeId(smartHomeId: String, page: Int, currentUser: CurrentUser): List<NamedModel> =
+        repositoryService
+            .findAllBySmartHomeId(smartHomeId = smartHomeId, page = page, currentUser = currentUser)
+            .map { convertToAbstractModel(entity = it, currentUser = currentUser) }
 
     override fun createModel(entity: PowerUnitEntity, model: PowerUnitModel, currentUser: CurrentUser) { }
 

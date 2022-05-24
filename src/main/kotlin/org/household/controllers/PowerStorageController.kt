@@ -37,9 +37,9 @@ class PowerStorageController @Autowired constructor(
      *
      */
     @GetMapping("/findAllBySmartHomeId")
-    fun findAllBySmartHomeId(@RequestParam smartHomeId: String): ResponseEntity<*> =
+    fun findAllBySmartHomeId(@RequestParam smartHomeId: String, @RequestParam page: Int): ResponseEntity<*> =
         exceptionHandler.executeGetOperation {
             val currentUser = userAuthenticationService.isPermitted()
-            modelService.findAllBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
+            modelService.findAllBySmartHomeId(smartHomeId = smartHomeId, page = page, currentUser = currentUser)
         }
 }
