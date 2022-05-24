@@ -23,9 +23,9 @@ export abstract class RouterUtilService {
     return this.index;
   }
 
-  public return(): void {
+  public return(suffix: string): void {
     if (this.routerPath && this.index) {
-      this.ngZone.run(() => this.router.navigate([`/${this.routerPath}`, { index: this.index }]));
+      this.ngZone.run(() => this.router.navigate([`/${this.routerPath}/${suffix}`, { index: this.index }]));
     }
 
     this.location.back();

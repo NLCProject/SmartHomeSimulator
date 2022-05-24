@@ -2,12 +2,52 @@
                                    [parentRouterPath]="'smart-home'"></app-generic-details-return-button>
 
 <div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" style="width: 100%; height: 100%;">
+  <div fxLayout='column' fxLayoutAlign='center center'>
+    <mat-spinner *ngIf='loading'></mat-spinner>
+  </div>
+
   <mat-tab-group [(selectedIndex)]="selectedTab" mat-align-tabs="center" style="height: 100%;">
-    <mat-tab label="{{ 'SmartHome' | translate }}"><app-smart-home-details *ngIf="selectedTab === 0"></app-smart-home-details></mat-tab>
-    <mat-tab label="{{ 'ElectricalDevices' | translate }}"><app-electrical-device-overview *ngIf="selectedTab === 1"></app-electrical-device-overview></mat-tab>
-    <mat-tab label="{{ 'PowerChargers' | translate }}"><app-power-charger-overview *ngIf="selectedTab === 2"></app-power-charger-overview></mat-tab>
-    <mat-tab label="{{ 'PowerStorages' | translate }}"><app-power-storage-overview *ngIf="selectedTab === 3"></app-power-storage-overview></mat-tab>
-    <mat-tab label="{{ 'PowerUnits' | translate }}"><app-power-unit-overview *ngIf="selectedTab === 4"></app-power-unit-overview></mat-tab>
-    <mat-tab label="{{ 'SmartMeters' | translate }}"><app-smart-meter-overview *ngIf="selectedTab === 5"></app-smart-meter-overview></mat-tab>
+    <mat-tab label="{{ 'SmartHome' | translate }}">
+      <app-smart-home-details
+              *ngIf="selectedTab === 0 && model"
+              [model]="model"
+              [id]="id">
+      </app-smart-home-details>
+    </mat-tab>
+
+    <mat-tab label="{{ 'ElectricalDevices' | translate }}" [disabled]="!id || id?.length === 0">
+      <app-electrical-device-overview
+              *ngIf="selectedTab === 1 && model"
+              [smartHomeId]="id">
+      </app-electrical-device-overview>
+    </mat-tab>
+
+    <mat-tab label="{{ 'PowerChargers' | translate }}" [disabled]="!id || id?.length === 0">
+      <app-power-charger-overview
+              *ngIf="selectedTab === 2 && model"
+              [smartHomeId]="id">
+      </app-power-charger-overview>
+    </mat-tab>
+
+    <mat-tab label="{{ 'PowerStorages' | translate }}" [disabled]="!id || id?.length === 0">
+      <app-power-storage-overview
+              *ngIf="selectedTab === 3 && model"
+              [smartHomeId]="id">
+      </app-power-storage-overview>
+    </mat-tab>
+
+    <mat-tab label="{{ 'PowerUnits' | translate }}" [disabled]="!id || id?.length === 0">
+      <app-power-unit-overview
+              *ngIf="selectedTab === 4 && model"
+              [smartHomeId]="id">
+      </app-power-unit-overview>
+    </mat-tab>
+
+    <mat-tab label="{{ 'SmartMeters' | translate }}" [disabled]="!id || id?.length === 0">
+      <app-smart-meter-overview
+              *ngIf="selectedTab === 5 && model"
+              [smartHomeId]="id">
+      </app-smart-meter-overview>
+    </mat-tab>
   </mat-tab-group>
 </div>

@@ -1,4 +1,4 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import {Component, Input, NgZone, OnInit} from '@angular/core';
 import {RouterUtilService} from '../../services/router-util.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
@@ -29,15 +29,19 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
     super(router, ngZone, location, 'smart-home', 0);
   }
 
+  @Input()
+  public id: string;
+
+  @Input()
+  public model: SmartHomeModel;
+
   public formGroup: FormGroup;
   public loading = false;
-  public id: string;
   public isVisible = false;
-  public model: SmartHomeModel;
 
   ngOnInit(): void {
     this.createForm();
-    this.getId();
+    this.setValues();
   }
 
   public updateModel(): void {
@@ -74,7 +78,7 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
         this.service.delete(this.model.id).subscribe(
           () => {
             this.translationService.showSnackbar('Deleted');
-            this.return();
+            this.return('overview');
           },
           error => {
             this.translationService.showSnackbarOnError(error);
@@ -85,33 +89,9 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
     });
   }
 
-  private getId(): void {
-    this.activatedRoute.params.subscribe(params => {
-      const key = 'id';
-      this.id = params[key];
-      if (this.id?.length > 0) {
-        this.loadData();
-      }
-    });
-  }
-
-  private loadData(): void {
-    this.loading = true;
-    this.service.findById(this.id).subscribe(
-        response => {
-          this.model = response;
-          this.setValues(response);
-        },
-        error => {
-          this.translationService.showSnackbarOnError(error);
-          this.loading = false;
-        }
-      );
-  }
-
-  private setValues(model: SmartHomeModel): void {
+  private setValues(): void {
     this.formGroup.setValue({
-      name: model.name
+      name: this.model.name
     });
 
     this.loading = false;

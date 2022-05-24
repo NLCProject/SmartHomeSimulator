@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nKey } from 'src/app/models/I18nKey';
 import {ActivatedRoute} from "@angular/router";
+import {SmartHomeService} from "../../services/smart-home.service";
+import {SmartHomeModel} from "../../models/SmartHomeModel";
+import {TranslationService} from "../../services/translation.service";
 
 @Component({
   selector: 'app-smart-home-details-overview',
@@ -10,18 +13,39 @@ import {ActivatedRoute} from "@angular/router";
 export class SmartHomeDetailsOverviewComponent implements OnInit {
 
   constructor(
+    private service: SmartHomeService,
+    private activatedRoute: ActivatedRoute,
+    private translationService: TranslationService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.selectedTab = +JSON.parse(this.route.snapshot.paramMap.get('index'));
+    this.getId();
   }
 
+  public loading = false;
+  public id: string;
+  public model: SmartHomeModel;
   public I18nKey = I18nKey;
   public selectedTab = 0;
   private swipeCoordinate: [number, number];
   private swipeTime = 0;
   private numberTabs = 6;
+
+  private getId(): void {
+    this.activatedRoute.params.subscribe(params => {
+      const key = 'id';
+      this.id = params[key];
+      if (this.id?.length > 0) {
+        this.loadData();
+      } else {
+        this.model = new SmartHomeModel();
+        this.model.name = '';
+        this.id = '';
+      }
+    });
+  }
 
   public swipe(event: TouchEvent, when: string): void {
     const coordinate: [number, number] = [event.changedTouches[0].clientX, event.changedTouches[0].clientY];
@@ -55,5 +79,19 @@ export class SmartHomeDetailsOverviewComponent implements OnInit {
         }
       }
     }
+  }
+
+  private loadData(): void {
+    this.loading = true;
+    this.service.findById(this.id).subscribe(
+        response => {
+          this.model = response;
+          this.loading = false;
+        },
+        error => {
+          this.translationService.showSnackbarOnError(error);
+          this.loading = false;
+        }
+    );
   }
 }
