@@ -1,1 +1,57 @@
-<p>electrical-device-details works!</p>
+<div class="spacer"></div>
+<form [formGroup]="formGroup" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;">
+        <mat-spinner *ngIf="loading"></mat-spinner>
+    </div>
+
+    <mat-form-field>
+        <input matInput required placeholder="{{ 'Name' | translate }}" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput required placeholder="{{ 'Current Power Consumption In KWh' | translate }}" formControlName="currentPowerConsumption">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput required placeholder="{{ 'Max Power Consumption In KWh' | translate }}" formControlName="maxPowerConsumption">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'Type' | translate }}</mat-label>
+        <mat-select required formControlName="type">
+            <mat-option *ngFor="let type of getTypes()" [value]="type">{{ type | translate }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-slide-toggle required formControlName="enabled">
+        {{ 'Enabled' | translate }}
+    </mat-slide-toggle>
+</form>
+
+<app-generic-details-save-button
+        [loading]="loading"
+        [routerPath]="routerPath"
+        [disabled]="!formGroup.valid"
+        [isVisible]="isVisible"
+        (updateModel)="updateModel()"></app-generic-details-save-button>
+
+<button mat-fab
+        class="action-bar-first"
+        [class.spinner]="loading"
+        [disabled]="loading || !model || id?.length < 1"
+        [matMenuTriggerFor]="menu">
+    <mat-icon>edit</mat-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+    <div fxLayout="column" fxLayoutAlign="center start" style="width: 280px;">
+        <button mat-menu-item
+                class="alert-button"
+                (click)="delete()"
+                [class.spinner]="loading"
+                [disabled]="loading">
+            <mat-icon class="alert-button">delete</mat-icon>
+            <span>{{ 'Delete' | translate }}</span>
+        </button>
+    </div>
+</mat-menu>

@@ -78,7 +78,7 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
         this.service.delete(this.model.id).subscribe(
           () => {
             this.translationService.showSnackbar('Deleted');
-            this.return('overview');
+            this.returnToOverview();
           },
           error => {
             this.translationService.showSnackbarOnError(error);

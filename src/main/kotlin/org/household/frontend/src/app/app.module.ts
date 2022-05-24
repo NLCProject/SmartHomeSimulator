@@ -14,6 +14,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ElectricalDeviceOverviewComponent } from './toolbar/electrical-device-overview/electrical-device-overview.component';
 import { PowerChargerOverviewComponent } from './toolbar/power-charger-overview/power-charger-overview.component';
 import { PowerStorageOverviewComponent } from './toolbar/power-storage-overview/power-storage-overview.component';
@@ -87,6 +88,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatListModule,
     MatMenuModule,
     MatProgressSpinnerModule,
+    MatSlideToggleModule,
     MatSnackBarModule,
     MatTabsModule,
     MatToolbarModule,
