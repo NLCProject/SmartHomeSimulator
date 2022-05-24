@@ -4,48 +4,47 @@ import {ElectricalDeviceDetailsComponent} from './details/electrical-device-deta
 import {PowerChargerDetailsComponent} from './details/power-charger-details/power-charger-details.component';
 import {PowerStorageDetailsComponent} from './details/power-storage-details/power-storage-details.component';
 import {PowerUnitDetailsComponent} from './details/power-unit-details/power-unit-details.component';
-import {SmartHomeDetailsComponent} from './toolbar/smart-home-details/smart-home-details.component';
 import {SmartMeterDetailsComponent} from './details/smart-meter-details/smart-meter-details.component';
 import {SmartHomeOverviewComponent} from "./toolbar/smart-home-overview/smart-home-overview.component";
 import {SmartHomeDetailsOverviewComponent} from "./toolbar/smart-home-details-overview/smart-home-details-overview.component";
 
 const routes: Routes = [
   {
-    path: 'electrical-device/details/:id',
+    path: 'electrical-device/details/:id/:smartHomeId',
     component: ElectricalDeviceDetailsComponent
   }, {
-    path: 'power-charger/details/:id',
+    path: 'power-charger/details/:id/:smartHomeId',
     component: PowerChargerDetailsComponent
   }, {
-    path: 'power-storage/details/:id',
+    path: 'power-storage/details/:id/:smartHomeId',
     component: PowerStorageDetailsComponent
   }, {
-    path: 'power-unit/details/:id',
+    path: 'power-unit/details/:id/:smartHomeId',
     component: PowerUnitDetailsComponent
   }, {
     path: 'smart-home/details/:id',
     component: SmartHomeDetailsOverviewComponent
   }, {
-    path: 'smart-meter/details/:id',
+    path: 'smart-meter/details/:id/:smartHomeId',
     component: SmartMeterDetailsComponent
   },   {
-    path: 'electrical-device/details',
+    path: 'electrical-device/details/:smartHomeId',
     component: ElectricalDeviceDetailsComponent
   }, {
-    path: 'power-charger/details',
+    path: 'power-charger/details/:smartHomeId',
     component: PowerChargerDetailsComponent
   }, {
-    path: 'power-storage/details',
+    path: 'power-storage/details/:smartHomeId',
     component: PowerStorageDetailsComponent
   }, {
-    path: 'power-unit/details',
+    path: 'power-unit/details/:smartHomeId',
     component: PowerUnitDetailsComponent
+  }, {
+    path: 'smart-meter/details/:smartHomeId',
+    component: SmartMeterDetailsComponent
   }, {
     path: 'smart-home/details',
     component: SmartHomeDetailsOverviewComponent
-  }, {
-    path: 'smart-meter/details',
-    component: SmartMeterDetailsComponent
   }, {
     path: 'smart-home/overview',
     component: SmartHomeOverviewComponent

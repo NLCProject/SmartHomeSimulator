@@ -54,7 +54,7 @@ export class GenericListWrapperComponent implements OnInit {
 
   public routeToAddDialog(): void {
     if (this.smartHomeId?.length > 0) {
-      this.router.navigate([`/${this.routerPath}/details?smartHomeId=${this.smartHomeId}`]);
+      this.router.navigate([`/${this.routerPath}/details`, { smartHomeId: this.smartHomeId }]);
     } else {
       this.router.navigate([`/${this.routerPath}/details`]);
     }
