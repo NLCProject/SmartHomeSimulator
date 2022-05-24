@@ -1,3 +1,5 @@
+<app-generic-details-return-button [titleI18nKey]="I18nKey[I18nKey.ElectricalDevice]"
+                                   [parentRouterPath]="getParentRouterPath()"></app-generic-details-return-button>
 <div class="spacer"></div>
 <form [formGroup]="formGroup" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;">
@@ -23,7 +25,7 @@
         </mat-select>
     </mat-form-field>
 
-    <mat-slide-toggle required formControlName="enabled">
+    <mat-slide-toggle formControlName="enabled">
         {{ 'Enabled' | translate }}
     </mat-slide-toggle>
 </form>

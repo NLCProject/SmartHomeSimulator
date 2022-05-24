@@ -29,7 +29,11 @@ class ElectricalDeviceModelService @Autowired constructor(
 
     override fun createModel(entity: ElectricalDeviceEntity, model: ElectricalDeviceModel, currentUser: CurrentUser) { }
 
-    override fun createAbstractModel(entity: ElectricalDeviceEntity, model: NamedModel, currentUser: CurrentUser) { }
+    override fun createAbstractModel(entity: ElectricalDeviceEntity, model: NamedModel, currentUser: CurrentUser) {
+        model.firstLine.text = entity.name
+        model.secondLine.text = entity.type.name
+        model.secondLine.translate = true
+    }
 
     override fun findAllPageable(filter: FilterParameters, page: Int, currentUser: CurrentUser): List<NamedModel> =
         throw NotImplementedError()

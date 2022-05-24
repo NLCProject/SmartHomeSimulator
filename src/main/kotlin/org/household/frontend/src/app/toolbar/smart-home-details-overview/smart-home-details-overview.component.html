@@ -17,35 +17,35 @@
 
     <mat-tab label="{{ 'ElectricalDevices' | translate }}" [disabled]="!id || id?.length === 0">
       <app-electrical-device-overview
-              *ngIf="selectedTab === 1 && model"
+              *ngIf="selectedTab === 1 && model && id?.length > 0"
               [smartHomeId]="id">
       </app-electrical-device-overview>
     </mat-tab>
 
     <mat-tab label="{{ 'PowerChargers' | translate }}" [disabled]="!id || id?.length === 0">
       <app-power-charger-overview
-              *ngIf="selectedTab === 2 && model"
+              *ngIf="selectedTab === 2 && model && id?.length > 0"
               [smartHomeId]="id">
       </app-power-charger-overview>
     </mat-tab>
 
     <mat-tab label="{{ 'PowerStorages' | translate }}" [disabled]="!id || id?.length === 0">
       <app-power-storage-overview
-              *ngIf="selectedTab === 3 && model"
+              *ngIf="selectedTab === 3 && model && id?.length > 0"
               [smartHomeId]="id">
       </app-power-storage-overview>
     </mat-tab>
 
     <mat-tab label="{{ 'PowerUnits' | translate }}" [disabled]="!id || id?.length === 0">
       <app-power-unit-overview
-              *ngIf="selectedTab === 4 && model"
+              *ngIf="selectedTab === 4 && model && id?.length > 0"
               [smartHomeId]="id">
       </app-power-unit-overview>
     </mat-tab>
 
     <mat-tab label="{{ 'SmartMeters' | translate }}" [disabled]="!id || id?.length === 0">
       <app-smart-meter-overview
-              *ngIf="selectedTab === 5 && model"
+              *ngIf="selectedTab === 5 && model && id?.length > 0"
               [smartHomeId]="id">
       </app-smart-meter-overview>
     </mat-tab>

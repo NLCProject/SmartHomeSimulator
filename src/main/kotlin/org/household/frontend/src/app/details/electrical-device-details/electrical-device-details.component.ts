@@ -1,7 +1,6 @@
-import {Component, Input, NgZone, OnInit} from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 import {RouterUtilService} from "../../services/router-util.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Location} from "@angular/common";
 import {TranslationService} from "../../services/translation.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
@@ -9,6 +8,7 @@ import {PromptComponent} from "../../shared/prompt/prompt.component";
 import { ElectricalDeviceModel } from 'src/app/models/ElectricalDeviceModel';
 import {ElectricalDeviceService} from "../../services/electrical-device.service";
 import {ElectricalDevice} from "../../models/ElectricalDevice";
+import { I18nKey } from 'src/app/models/I18nKey';
 
 @Component({
   selector: 'app-electrical-device-details',
@@ -20,22 +20,19 @@ export class ElectricalDeviceDetailsComponent  extends RouterUtilService impleme
   constructor(
       router: Router,
       ngZone: NgZone,
-      location: Location,
       private service: ElectricalDeviceService,
       private translationService: TranslationService,
       private activatedRoute: ActivatedRoute,
       private formBuilder: FormBuilder,
       private dialog: MatDialog
   ) {
-    super(router, ngZone, location, 'electrical-device', 1);
+    super(router, ngZone, 'electrical-device', 1);
   }
 
-  @Input()
+  public I18nKey = I18nKey;
   public id: string;
-
-  @Input()
+  public smartHomeId: string;
   public model: ElectricalDeviceModel;
-
   public formGroup: FormGroup;
   public loading = false;
   public isVisible = false;
@@ -43,6 +40,10 @@ export class ElectricalDeviceDetailsComponent  extends RouterUtilService impleme
   ngOnInit(): void {
     this.createForm();
     this.getId();
+  }
+
+  public getParentRouterPath(): string {
+    return `smart-home/details/${this.smartHomeId}`;
   }
 
   public getTypes(): string[] {
@@ -57,7 +58,7 @@ export class ElectricalDeviceDetailsComponent  extends RouterUtilService impleme
     }
 
     const controls = this.formGroup.controls;
-    this.model.smartHomeId = this.id
+    this.model.smartHomeId = this.smartHomeId;
     this.model.name = controls.name.value;
     this.model.currentPowerConsumption = +controls.currentPowerConsumption.value;
     this.model.maxPowerConsumption = +controls.maxPowerConsumption.value;
@@ -68,7 +69,7 @@ export class ElectricalDeviceDetailsComponent  extends RouterUtilService impleme
         response => {
           this.translationService.showSnackbar('Updated');
           this.loading = false;
-          this.reloadDetailView(response.id);
+          this.reloadDetailView(response.id, this.smartHomeId);
         },
         error => {
           this.translationService.showSnackbarOnError(error);
@@ -102,6 +103,9 @@ export class ElectricalDeviceDetailsComponent  extends RouterUtilService impleme
 
   private getId(): void {
     this.activatedRoute.params.subscribe(params => {
+      const smartHomeKey = 'smartHomeId';
+      this.smartHomeId = params[smartHomeKey];
+
       const key = 'id';
       this.id = params[key];
       if (this.id?.length > 0) {
@@ -142,7 +146,7 @@ export class ElectricalDeviceDetailsComponent  extends RouterUtilService impleme
           name: [null, Validators.compose([Validators.required])],
           currentPowerConsumption: [null, Validators.compose([Validators.required, Validators.pattern('^[0-9.]*$')])],
           maxPowerConsumption: [null, Validators.compose([Validators.required, Validators.min(1), Validators.pattern('^[0-9.]*$')])],
-          enabled: [null, Validators.compose([Validators.required])],
+          enabled: [null],
           type: [null, Validators.compose([Validators.required])]
         }
     );

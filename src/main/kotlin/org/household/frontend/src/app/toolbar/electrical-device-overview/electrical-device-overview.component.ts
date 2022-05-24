@@ -14,4 +14,8 @@ export class ElectricalDeviceOverviewComponent {
 
   @Input()
   public smartHomeId: string;
+
+  public getSmartHomeId(): string {
+    return this.smartHomeId;
+  }
 }

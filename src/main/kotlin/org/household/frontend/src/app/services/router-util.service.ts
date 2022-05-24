@@ -1,6 +1,5 @@
 import {Injectable, NgZone} from '@angular/core';
 import {Router} from '@angular/router';
-import {Location} from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,6 @@ export abstract class RouterUtilService {
   protected constructor(
     protected router: Router,
     private ngZone: NgZone,
-    private location: Location,
     public routerPath: string,
     protected index: number,
 ) { }
@@ -35,7 +33,14 @@ export abstract class RouterUtilService {
     this.router.navigate([`/${path}`, parameter]);
   }
 
-  public reloadDetailView(id: string): void {
+  public reloadDetailView(id: string, smartHomeId: string): void {
+    // Force reload of page
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate([`/${this.routerPath}/details`, id, smartHomeId]);
+    });
+  }
+
+  public reloadSmartHomeDetailView(id: string): void {
     // Force reload of page
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
       this.router.navigate([`/${this.routerPath}/details`, id]);

@@ -1,7 +1,6 @@
 import {Component, Input, NgZone, OnInit} from '@angular/core';
 import {RouterUtilService} from '../../services/router-util.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Location} from '@angular/common';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SmartHomeModel} from '../../models/SmartHomeModel';
 import {SmartHomeService} from '../../services/smart-home.service';
@@ -19,14 +18,13 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
   constructor(
     router: Router,
     ngZone: NgZone,
-    location: Location,
     private service: SmartHomeService,
     private translationService: TranslationService,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
     private dialog: MatDialog
   ) {
-    super(router, ngZone, location, 'smart-home', 0);
+    super(router, ngZone, 'smart-home', 0);
   }
 
   @Input()
@@ -57,7 +55,7 @@ export class SmartHomeDetailsComponent extends RouterUtilService implements OnIn
       response => {
         this.translationService.showSnackbar('Updated');
         this.loading = false;
-        this.reloadDetailView(response.id);
+        this.reloadSmartHomeDetailView(response.id);
       },
       error => {
         this.translationService.showSnackbarOnError(error);

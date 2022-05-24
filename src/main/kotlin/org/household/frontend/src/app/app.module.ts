@@ -43,6 +43,8 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { SportsclubIconComponent } from './shared/sportsclub-icon/sportsclub-icon.component';
 import { SmartHomeDetailsOverviewComponent } from './toolbar/smart-home-details-overview/smart-home-details-overview.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -87,7 +89,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatInputModule,
     MatListModule,
     MatMenuModule,
+    MatOptionModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
     MatSlideToggleModule,
     MatSnackBarModule,
     MatTabsModule,

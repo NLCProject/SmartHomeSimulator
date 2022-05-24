@@ -43,6 +43,10 @@ export class GenericListWrapperComponent implements OnInit {
     this.loadData();
   }
 
+  public getSmartHomeId(): string {
+    return this.smartHomeId;
+  }
+
   public isLoading(): boolean {
     return this.loading || this.loadingDomain;
   }
@@ -54,7 +58,7 @@ export class GenericListWrapperComponent implements OnInit {
 
   public routeToAddDialog(): void {
     if (this.smartHomeId?.length > 0) {
-      this.router.navigate([`/${this.routerPath}/details`, { smartHomeId: this.smartHomeId }]);
+      this.router.navigate([`/${this.routerPath}/details`, '', this.smartHomeId]);
     } else {
       this.router.navigate([`/${this.routerPath}/details`]);
     }

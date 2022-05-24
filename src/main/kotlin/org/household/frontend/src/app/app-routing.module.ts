@@ -28,21 +28,6 @@ const routes: Routes = [
     path: 'smart-meter/details/:id/:smartHomeId',
     component: SmartMeterDetailsComponent
   },   {
-    path: 'electrical-device/details/:smartHomeId',
-    component: ElectricalDeviceDetailsComponent
-  }, {
-    path: 'power-charger/details/:smartHomeId',
-    component: PowerChargerDetailsComponent
-  }, {
-    path: 'power-storage/details/:smartHomeId',
-    component: PowerStorageDetailsComponent
-  }, {
-    path: 'power-unit/details/:smartHomeId',
-    component: PowerUnitDetailsComponent
-  }, {
-    path: 'smart-meter/details/:smartHomeId',
-    component: SmartMeterDetailsComponent
-  }, {
     path: 'smart-home/details',
     component: SmartHomeDetailsOverviewComponent
   }, {

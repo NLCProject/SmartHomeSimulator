@@ -1,7 +1,7 @@
 import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
 import {I18nKey} from '../../models/I18nKey';
 import {NamedModel} from '../../models/NamedModel';
-import {Router} from '@angular/router';
+import {Router, UrlTree} from '@angular/router';
 
 @Component({
   selector: 'app-generic-list',
@@ -26,6 +26,9 @@ export class GenericListComponent {
   @Output()
   private newPage: EventEmitter<number> = new EventEmitter();
 
+  @Input()
+  public smartHomeId: string = null;
+
   public I18nKey = I18nKey;
   public isVisible = false;
   private page = 0;
@@ -43,10 +46,14 @@ export class GenericListComponent {
   }
 
   public openInNewView(model: NamedModel): void {
-    const url = this.router.serializeUrl(
-      this.router.createUrlTree([`/${this.routerPath}/details`, model.id])
-    );
+    let urlTree: UrlTree;
+    if (this.smartHomeId?.length > 0) {
+      urlTree = this.router.createUrlTree([`/${this.routerPath}/details`, model.id, this.smartHomeId]);
+    } else {
+      urlTree = this.router.createUrlTree([`/${this.routerPath}/details`, model.id])
+    }
 
+    const url = this.router.serializeUrl(urlTree);
     window.open(url, '_blank');
   }
 
@@ -59,7 +66,11 @@ export class GenericListComponent {
       return;
     }
 
-    this.router.navigate([`/${this.routerPath}/details`, model.id]);
+    if (this.smartHomeId?.length > 0) {
+      this.router.navigate([`/${this.routerPath}/details`, model.id, this.smartHomeId]);
+    } else {
+      this.router.navigate([`/${this.routerPath}/details`, model.id]);
+    }
   }
 
   @HostListener('scroll', ['$event'])
