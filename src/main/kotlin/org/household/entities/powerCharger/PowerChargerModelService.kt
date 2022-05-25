@@ -29,7 +29,9 @@ class PowerChargerModelService @Autowired constructor(
 
     override fun createModel(entity: PowerChargerEntity, model: PowerChargerModel, currentUser: CurrentUser) { }
 
-    override fun createAbstractModel(entity: PowerChargerEntity, model: NamedModel, currentUser: CurrentUser) { }
+    override fun createAbstractModel(entity: PowerChargerEntity, model: NamedModel, currentUser: CurrentUser) {
+        model.firstLine.text = entity.name
+    }
 
     override fun findAllPageable(filter: FilterParameters, page: Int, currentUser: CurrentUser): List<NamedModel> =
         throw NotImplementedError()

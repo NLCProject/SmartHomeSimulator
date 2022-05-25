@@ -5,7 +5,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {TranslationService} from '../../services/translation.service';
 import {MatDialog} from '@angular/material/dialog';
 import {RouterUtilService} from '../../services/router-util.service';
-import { I18nKey } from 'src/app/models/I18nKey';
 import {SmartMeterService} from '../../services/smart-meter.service';
 import {SmartMeterModel} from '../../models/SmartMeterModel';
 import {FlowDirection} from '../../models/FlowDirection';
@@ -32,8 +31,6 @@ export class SmartMeterDetailsComponent extends RouterUtilService implements OnI
   @Input()
   public smartHomeId: string;
 
-  public I18nKey = I18nKey;
-  public id: string;
   public model: SmartMeterModel;
   public formGroup: FormGroup;
   public loading = false;
@@ -70,9 +67,9 @@ export class SmartMeterDetailsComponent extends RouterUtilService implements OnI
 
     this.service.save(this.model).subscribe(
         response => {
+          this.model.id = response.id;
           this.translationService.showSnackbar('Updated');
           this.loading = false;
-          this.reloadDetailView(response.id, this.smartHomeId);
         },
         error => {
           this.translationService.showSnackbarOnError(error);
@@ -93,7 +90,7 @@ export class SmartMeterDetailsComponent extends RouterUtilService implements OnI
         this.service.delete(this.model.id).subscribe(
             () => {
               this.translationService.showSnackbar('Deleted');
-              this.returnToDetails();
+              location.reload();
             },
             error => {
               this.translationService.showSnackbarOnError(error);
@@ -106,10 +103,14 @@ export class SmartMeterDetailsComponent extends RouterUtilService implements OnI
 
   private loadData(): void {
     this.loading = true;
-    this.service.findById(this.id).subscribe(
+    this.service.findBySmartHomeId(this.smartHomeId).subscribe(
         response => {
           this.model = response;
-          this.setValues(response);
+          if (response) {
+            this.setValues(response);
+          }
+
+          this.loading = false;
         },
         error => {
           this.translationService.showSnackbarOnError(error);

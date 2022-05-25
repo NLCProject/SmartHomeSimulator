@@ -90,7 +90,7 @@ export class PowerUnitDetailsComponent extends RouterUtilService implements OnIn
         this.service.delete(this.model.id).subscribe(
             () => {
               this.translationService.showSnackbar('Deleted');
-              this.returnToDetails();
+              this.returnToDetails(this.smartHomeId);
             },
             error => {
               this.translationService.showSnackbarOnError(error);

@@ -1,7 +1,4 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {PromptComponent} from '../../shared/prompt/prompt.component';
-import {MatDialog} from '@angular/material/dialog';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-generic-details-save-button',
@@ -10,10 +7,7 @@ import {Router} from '@angular/router';
 })
 export class GenericDetailsSaveButtonComponent {
 
-  constructor(
-    private router: Router,
-    private dialog: MatDialog
-  ) { }
+  constructor() { }
 
   @Input()
   public isVisible = false;
@@ -29,17 +23,4 @@ export class GenericDetailsSaveButtonComponent {
 
   @Output()
   public updateModel = new EventEmitter<void>();
-
-  public loadNewView(): void {
-    const promptDialog = this.dialog.open(PromptComponent, {
-      panelClass: 'mat-dialog-container-small',
-      data: { translationKey: 'Want To Create New Entity', showAccept: true }
-    });
-
-    promptDialog.afterClosed().subscribe(result => {
-      if (result) {
-        this.router.navigate([`/${this.routerPath}/details`]);
-      }
-    });
-  }
 }

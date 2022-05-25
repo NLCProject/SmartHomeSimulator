@@ -40,4 +40,9 @@ class PowerUnitModel : IscModel() {
      *
      */
     var type: PowerUnit = PowerUnit.Other
+
+    /**
+     *
+     */
+    var enabled: Boolean = false
 }

@@ -84,7 +84,7 @@ export class PowerChargerDetailsComponent extends RouterUtilService implements O
         this.service.delete(this.model.id).subscribe(
             () => {
               this.translationService.showSnackbar('Deleted');
-              this.returnToDetails();
+              this.returnToDetails(this.smartHomeId);
             },
             error => {
               this.translationService.showSnackbarOnError(error);

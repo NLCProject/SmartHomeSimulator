@@ -1,18 +1,21 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {PowerUnitService} from "../../services/power-unit.service";
 
 @Component({
   selector: 'app-power-unit-overview',
   templateUrl: './power-unit-overview.component.html',
   styleUrls: ['./power-unit-overview.component.scss']
 })
-export class PowerUnitOverviewComponent implements OnInit {
+export class PowerUnitOverviewComponent {
 
-  constructor() { }
+  constructor(
+      public service: PowerUnitService
+  ) { }
 
   @Input()
   public smartHomeId: string;
 
-  ngOnInit(): void {
+  public getSmartHomeId(): string {
+    return this.smartHomeId;
   }
-
 }

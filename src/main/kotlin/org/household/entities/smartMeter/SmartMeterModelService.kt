@@ -22,17 +22,21 @@ class SmartMeterModelService @Autowired constructor(
     /**
      *
      */
-    fun findBySmartHomeId(smartHomeId: String, currentUser: CurrentUser): SmartMeterModel {
+    fun findBySmartHomeId(smartHomeId: String, currentUser: CurrentUser): SmartMeterModel? {
         val optional = repositoryService.findBySmartHomeId(smartHomeId = smartHomeId, currentUser = currentUser)
         if (!optional.isPresent)
-            throw Exception("Smart meter with smart home ID '$smartHomeId' not found")
+            return null
 
         return convertToModel(entity = optional.get(), currentUser = currentUser)
     }
 
     override fun createModel(entity: SmartMeterEntity, model: SmartMeterModel, currentUser: CurrentUser) { }
 
-    override fun createAbstractModel(entity: SmartMeterEntity, model: NamedModel, currentUser: CurrentUser) { }
+    override fun createAbstractModel(entity: SmartMeterEntity, model: NamedModel, currentUser: CurrentUser) {
+        model.firstLine.text = entity.name
+        model.secondLine.text = entity.flowDirection.name
+        model.secondLine.translate = true
+    }
 
     override fun findAllPageable(filter: FilterParameters, page: Int, currentUser: CurrentUser): List<NamedModel> =
         throw NotImplementedError()

@@ -21,8 +21,8 @@ export abstract class RouterUtilService {
     return this.index;
   }
 
-  public returnToDetails(): void {
-    this.ngZone.run(() => this.router.navigate([`/smart-home/details`, { index: this.index }]));
+  public returnToDetails(smartHomeId: string): void {
+    this.ngZone.run(() => this.router.navigate([`/smart-home/details`, smartHomeId, { index: this.index }]));
   }
 
   public returnToOverview(): void {

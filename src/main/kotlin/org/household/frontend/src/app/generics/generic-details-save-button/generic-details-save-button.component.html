@@ -1,16 +1,5 @@
 <button
   mat-fab
-  class="action-bar-third"
-  *ngIf="isVisible && routerPath?.length > 0"
-  (click)="loadNewView()"
-  [class.spinner]="loading"
-  [disabled]="loading || disabled"
-  color="accent">
-  <mat-icon>add</mat-icon>
-</button>
-
-<button
-  mat-fab
   class="action-bar-second"
   *ngIf="isVisible"
   (click)="updateModel.emit()"
