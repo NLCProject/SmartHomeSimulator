@@ -1,23 +1,4 @@
-# Encryption Vote
-The privacy of every voter is guaranteed by a localized differential privacy workflow in the frontend application.
-Per question, an user can vote from 1 (excellent) to 5 (very bad). To distinguish the individual vote,
-a theoretical coin is thrown in frontend. If head is thrown, the correct result is sent to the backend. If not, a second
-coin will be thrown. As again, head sends the original result, tail sends a random result (dependent of the vote mode).
-
-## Vote Modes
-On the landing page <b>http://localhost:4200/vote </b> you have 3 options to submit your votes:
-
-<ul>
-    <li><b>Save</b>: Default mode. Same as <b>Mode 1</b>, but your vote is only sent one time.</li>
-    <li><b>Mode 1</b>: When tail is thrown two times, a random value of the original and its adjacent values is sent.
-    For example result 1 -> random of 1 or 2; result 4 -> random of 3, 4 or 5</li>
-    <li><b>Mode 2</b>: When tail is thrown two times, a random value except the original is sent.
-    For example result 2 -> random of 1, 3, 4 or 5</li>
-</ul>
-
-For <b>Mode 1</b> and <b>Mode 2</b>, your vote will be sent ~100 times to the backend. But for each vote, the coins are
-thrown independently (this means 100 different votes in best case). This helps you to generate a big set of votes with
-only few clicks.
+# Smart House Simulator
 
 ## Installation
 <b>Warning</b>: An active internet connection is required for the installation.

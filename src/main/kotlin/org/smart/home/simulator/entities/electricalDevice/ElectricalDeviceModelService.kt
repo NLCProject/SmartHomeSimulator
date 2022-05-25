@@ -1,5 +1,6 @@
 package org.smart.home.simulator.entities.electricalDevice
 
+import org.isc.utils.enums.IconEnum
 import org.smart.home.simulator.dto.ElectricalDeviceModel
 import org.isc.utils.genericCrudl.services.ModelService
 import org.isc.utils.models.CurrentUser
@@ -33,6 +34,9 @@ class ElectricalDeviceModelService @Autowired constructor(
         model.firstLine.text = entity.name
         model.secondLine.text = entity.type.name
         model.secondLine.translate = true
+
+        if (!entity.enabled)
+            model.addIcon(icon = IconEnum.POWER_OFF)
     }
 
     override fun findAllPageable(filter: FilterParameters, page: Int, currentUser: CurrentUser): List<NamedModel> =

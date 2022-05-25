@@ -1,5 +1,6 @@
 package test.modelServiceTest
 
+import org.isc.utils.enums.IconEnum
 import org.smart.home.simulator.Application
 import org.smart.home.simulator.dto.PowerStorageModel
 import org.smart.home.simulator.entities.powerStorage.PowerStorageEntity
@@ -87,7 +88,17 @@ class PowerStorageModelServiceTest : ModelServiceTest<PowerStorageEntity, PowerS
     }
 
     @Test
-    override fun checkAbstractIcons() { }
+    override fun checkAbstractIcons() {
+        var storage = testHelperService.createPowerStorage(enabled = true, currentUser = currentUser)
+        var model = modelService.findAbstractById(id = storage.id, currentUser = currentUser)
+        assertTrue(model.icons.isEmpty())
+
+        storage.enabled = false
+        storage = repositoryService.save(entity = storage, currentUser = currentUser)
+        model = modelService.findAbstractById(id = storage.id, currentUser = currentUser)
+        assertEquals(1, model.icons.size)
+        assertEquals(IconEnum.POWER_OFF, model.icons.first().icon)
+    }
 
     override fun compareEntityAndAbstractModelAndThrow(entity: PowerStorageEntity, model: NamedModel) {
         assertFalse(model.firstLine.translate)

@@ -8,7 +8,7 @@ class TypescriptModelGeneratorTest {
     @Test
     fun generate() {
         TypescriptModelGenerator().generate(
-            pathToTypescriptModels = "./src/main/kotlin/org/household/frontend/src/app/models",
+            pathToTypescriptModels = "./src/main/kotlin/org/smart/home/simulator/frontend/src/app/models",
             subPackages = listOf("dto"),
             packageName = "org.smart.home.simulator"
         )

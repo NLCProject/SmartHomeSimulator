@@ -3,6 +3,7 @@
  */
 
 export enum IconEnum {
+    POWER_OFF,
     ARCHIVE,
     MINOR,
     BEEN_HERE,

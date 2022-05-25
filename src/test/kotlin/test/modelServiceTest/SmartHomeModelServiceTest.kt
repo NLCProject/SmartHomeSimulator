@@ -65,6 +65,7 @@ class SmartHomeModelServiceTest : ModelServiceTest<SmartHomeEntity, SmartHomeMod
         assertTrue(model.thirdLine.text.isEmpty())
         assertNull(model.thumbnail)
         assertNull(model.data)
+        assertTrue(model.icons.isEmpty())
     }
 
     override fun compareEntityAndModelAndThrow(entity: SmartHomeEntity, model: SmartHomeModel) {

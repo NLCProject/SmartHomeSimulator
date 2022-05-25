@@ -49,6 +49,7 @@ class TestHelperService @Autowired constructor(
      */
     fun createElectricalDevice(
         smartHome: SmartHomeEntity? = null,
+        enabled: Boolean = getRandomBoolean(),
         currentUser: CurrentUser
     ): ElectricalDeviceEntity {
         val device = ElectricalDeviceEntity()
@@ -56,7 +57,7 @@ class TestHelperService @Autowired constructor(
         device.currentPowerConsumption = getRandomDouble()
         device.maxPowerConsumption = getRandomDouble()
         device.type = ElectricalDevice.values().random()
-        device.enabled = getRandomBoolean()
+        device.enabled = enabled
         device.smartHome = smartHome ?: createSmartHome(currentUser = currentUser)
         device.organisationId = currentUser.organisationId
         return electricalDeviceRepository.save(entity = device, currentUser = currentUser)
@@ -67,13 +68,14 @@ class TestHelperService @Autowired constructor(
      */
     fun createPowerCharger(
         smartHome: SmartHomeEntity? = null,
+        enabled: Boolean = getRandomBoolean(),
         currentUser: CurrentUser
     ): PowerChargerEntity {
         val powerCharger = PowerChargerEntity()
         powerCharger.name = Ids.getRandomId()
         powerCharger.currentChargingRate = getRandomDouble()
         powerCharger.maxChargingRate = getRandomDouble()
-        powerCharger.enabled = getRandomBoolean()
+        powerCharger.enabled = enabled
         powerCharger.smartHome = smartHome ?: createSmartHome(currentUser = currentUser)
         powerCharger.organisationId = currentUser.organisationId
         return powerChargerRepository.save(entity = powerCharger, currentUser = currentUser)
@@ -84,6 +86,7 @@ class TestHelperService @Autowired constructor(
      */
     fun createPowerStorage(
         smartHome: SmartHomeEntity? = null,
+        enabled: Boolean = getRandomBoolean(),
         currentUser: CurrentUser
     ): PowerStorageEntity {
         val powerStorage = PowerStorageEntity()
@@ -92,7 +95,7 @@ class TestHelperService @Autowired constructor(
         powerStorage.maxChargingRate = getRandomDouble()
         powerStorage.currentChargingRate = getRandomDouble()
         powerStorage.maxChargingRate = getRandomDouble()
-        powerStorage.enabled = getRandomBoolean()
+        powerStorage.enabled = enabled
         powerStorage.smartHome = smartHome ?: createSmartHome(currentUser = currentUser)
         powerStorage.organisationId = currentUser.organisationId
         return powerStorageRepository.save(entity = powerStorage, currentUser = currentUser)
@@ -103,13 +106,14 @@ class TestHelperService @Autowired constructor(
      */
     fun createPowerUnit(
         smartHome: SmartHomeEntity? = null,
+        enabled: Boolean = getRandomBoolean(),
         currentUser: CurrentUser
     ): PowerUnitEntity {
         val powerUnit = PowerUnitEntity()
         powerUnit.name = Ids.getRandomId()
         powerUnit.currentPowerGeneration = getRandomDouble()
         powerUnit.maxPowerGeneration = getRandomDouble()
-        powerUnit.enabled = getRandomBoolean()
+        powerUnit.enabled = enabled
         powerUnit.type = PowerUnit.values().random()
         powerUnit.smartHome = smartHome ?: createSmartHome(currentUser = currentUser)
         powerUnit.organisationId = currentUser.organisationId

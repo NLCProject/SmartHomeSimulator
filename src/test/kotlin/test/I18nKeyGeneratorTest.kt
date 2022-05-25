@@ -6,15 +6,15 @@ import kotlin.test.assertFalse
 
 class I18nKeyGeneratorTest {
 
-    private val pathToAssets = "./src/main/kotlin/org/household/frontend/src/assets/i18n"
+    private val pathToAssets = "./src/main/kotlin/org/smart/home/simulator/frontend/src/assets/i18n"
 
     @Test
     fun generate() {
         I18nKeyGenerator().generate(
             pathToAssets = pathToAssets,
             packageName = "org.smart.home.simulator",
-            pathToSources = "./src/main/kotlin/org/household/frontend/src/app",
-            snackbarFunctions = emptyList(),
+            pathToSources = "./src/main/kotlin/org/smart/home/simulator/frontend/src/app",
+            snackbarFunctions = listOf("showSnackbarOnError", "showSnackbar"),
             additionalI18nKeys = emptyList(),
             i18nKeysToIgnore = emptyList(),
             topLevelFoldersToInclude = listOf("details", "generics", "shared", "toolbar")

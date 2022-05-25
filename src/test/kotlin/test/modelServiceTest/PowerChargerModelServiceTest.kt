@@ -1,5 +1,6 @@
 package test.modelServiceTest
 
+import org.isc.utils.enums.IconEnum
 import org.smart.home.simulator.Application
 import org.smart.home.simulator.dto.PowerChargerModel
 import org.smart.home.simulator.entities.powerCharger.PowerChargerEntity
@@ -87,7 +88,17 @@ class PowerChargerModelServiceTest : ModelServiceTest<PowerChargerEntity, PowerC
     }
 
     @Test
-    override fun checkAbstractIcons() { }
+    override fun checkAbstractIcons() {
+        var charger = testHelperService.createPowerCharger(enabled = true, currentUser = currentUser)
+        var model = modelService.findAbstractById(id = charger.id, currentUser = currentUser)
+        assertTrue(model.icons.isEmpty())
+
+        charger.enabled = false
+        charger = repositoryService.save(entity = charger, currentUser = currentUser)
+        model = modelService.findAbstractById(id = charger.id, currentUser = currentUser)
+        assertEquals(1, model.icons.size)
+        assertEquals(IconEnum.POWER_OFF, model.icons.first().icon)
+    }
 
     override fun compareEntityAndAbstractModelAndThrow(entity: PowerChargerEntity, model: NamedModel) {
         assertFalse(model.firstLine.translate)

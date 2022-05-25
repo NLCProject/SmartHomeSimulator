@@ -46,6 +46,7 @@ export enum I18nKey {
     LoginAttempts,
     Cancelled,
     Result,
+    PowerOff,
     Cronjobs,
     BankFilter,
     PaymentStatus,

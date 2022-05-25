@@ -1,5 +1,7 @@
 package org.smart.home.simulator.entities.powerCharger
 
+import org.isc.utils.enums.I18nKey
+import org.isc.utils.enums.IconEnum
 import org.smart.home.simulator.dto.PowerChargerModel
 import org.isc.utils.genericCrudl.services.ModelService
 import org.isc.utils.models.CurrentUser
@@ -31,6 +33,9 @@ class PowerChargerModelService @Autowired constructor(
 
     override fun createAbstractModel(entity: PowerChargerEntity, model: NamedModel, currentUser: CurrentUser) {
         model.firstLine.text = entity.name
+
+        if (!entity.enabled)
+            model.addIcon(icon = IconEnum.POWER_OFF)
     }
 
     override fun findAllPageable(filter: FilterParameters, page: Int, currentUser: CurrentUser): List<NamedModel> =

@@ -1,5 +1,6 @@
 package test.modelServiceTest
 
+import org.isc.utils.enums.IconEnum
 import org.smart.home.simulator.Application
 import org.smart.home.simulator.dto.PowerUnitModel
 import org.smart.home.simulator.entities.powerUnit.PowerUnitEntity
@@ -87,7 +88,17 @@ class PowerUnitModelServiceTest : ModelServiceTest<PowerUnitEntity, PowerUnitMod
     }
 
     @Test
-    override fun checkAbstractIcons() { }
+    override fun checkAbstractIcons() {
+        var unit = testHelperService.createPowerUnit(enabled = true, currentUser = currentUser)
+        var model = modelService.findAbstractById(id = unit.id, currentUser = currentUser)
+        assertTrue(model.icons.isEmpty())
+
+        unit.enabled = false
+        unit = repositoryService.save(entity = unit, currentUser = currentUser)
+        model = modelService.findAbstractById(id = unit.id, currentUser = currentUser)
+        assertEquals(1, model.icons.size)
+        assertEquals(IconEnum.POWER_OFF, model.icons.first().icon)
+    }
 
     override fun compareEntityAndAbstractModelAndThrow(entity: PowerUnitEntity, model: NamedModel) {
         assertFalse(model.firstLine.translate)

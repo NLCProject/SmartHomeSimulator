@@ -91,6 +91,7 @@ class SmartMeterModelServiceTest : ModelServiceTest<SmartMeterEntity, SmartMeter
         assertTrue(model.thirdLine.text.isEmpty())
         assertNull(model.thumbnail)
         assertNull(model.data)
+        assertTrue(model.icons.isEmpty())
     }
 
     override fun compareEntityAndModelAndThrow(entity: SmartMeterEntity, model: SmartMeterModel) {

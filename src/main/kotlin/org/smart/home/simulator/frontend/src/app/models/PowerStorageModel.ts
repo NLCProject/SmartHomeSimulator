@@ -5,15 +5,15 @@
  */
 
 export class PowerStorageModel {
-    smartHomeId = '';
-    name = '';
-    currentChargingRate = 0;
-    maxChargingRate = 0;
-    maxPower = 0;
-    currentPower = 0;
-    enabled = false;
-    id = '';
-    organisationId = '';
-    timestampCreated = 0;
-    timestampLastModified = 0;
+    smartHomeId: string = '';
+    name: string = '';
+    currentChargingRate: number = 0;
+    maxChargingRate: number = 0;
+    maxPower: number = 0;
+    currentPower: number = 0;
+    enabled: boolean = false;
+    id: string = '';
+    organisationId: string = '';
+    timestampCreated: number = 0;
+    timestampLastModified: number = 0;
 }

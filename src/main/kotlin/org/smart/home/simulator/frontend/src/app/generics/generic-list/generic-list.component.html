@@ -24,7 +24,8 @@
         <div fxLayout='column' fxLayoutAlign='center center'>
           <div mat-line *ngIf='!model?.firstLine?.translate'>{{ model?.firstLine?.text }}</div>
           <div mat-line *ngIf='model?.firstLine?.translate'>{{ model?.firstLine?.text | translate }}</div>
-          <div mat-line>{{ model?.secondLine?.text }}</div>
+          <div mat-line *ngIf='!model?.secondLine?.translate'>{{ model?.secondLine?.text }}</div>
+          <div mat-line *ngIf='model?.secondLine?.translate'>{{ model?.secondLine?.text | translate }}</div>
           <div mat-line *ngIf='model?.thirdLine?.text?.length > 0'>{{ model?.thirdLine?.text }}</div>
         </div>
         <app-sportsclub-icon [models]='model?.icons'></app-sportsclub-icon>
