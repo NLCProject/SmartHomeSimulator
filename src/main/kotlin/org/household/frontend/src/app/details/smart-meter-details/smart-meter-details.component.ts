@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-smart-meter-details',
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class SmartMeterDetailsComponent implements OnInit {
 
   constructor() { }
+
+  @Input()
+  public smartHomeId: string;
 
   ngOnInit(): void {
   }

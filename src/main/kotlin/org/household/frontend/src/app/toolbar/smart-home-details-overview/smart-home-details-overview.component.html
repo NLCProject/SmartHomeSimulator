@@ -44,10 +44,10 @@
     </mat-tab>
 
     <mat-tab label="{{ 'SmartMeters' | translate }}" [disabled]="!id || id?.length === 0">
-      <app-smart-meter-overview
+      <app-smart-meter-details
               *ngIf="selectedTab === 5 && model && id?.length > 0"
               [smartHomeId]="id">
-      </app-smart-meter-overview>
+      </app-smart-meter-details>
     </mat-tab>
   </mat-tab-group>
 </div>

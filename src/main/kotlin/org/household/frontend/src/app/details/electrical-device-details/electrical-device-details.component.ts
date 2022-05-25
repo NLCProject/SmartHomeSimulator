@@ -15,7 +15,7 @@ import { I18nKey } from 'src/app/models/I18nKey';
   templateUrl: './electrical-device-details.component.html',
   styleUrls: ['./electrical-device-details.component.scss']
 })
-export class ElectricalDeviceDetailsComponent  extends RouterUtilService implements OnInit {
+export class ElectricalDeviceDetailsComponent extends RouterUtilService implements OnInit {
 
   constructor(
       router: Router,

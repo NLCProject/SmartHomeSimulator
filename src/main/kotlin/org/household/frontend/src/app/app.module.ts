@@ -19,7 +19,6 @@ import { ElectricalDeviceOverviewComponent } from './toolbar/electrical-device-o
 import { PowerChargerOverviewComponent } from './toolbar/power-charger-overview/power-charger-overview.component';
 import { PowerStorageOverviewComponent } from './toolbar/power-storage-overview/power-storage-overview.component';
 import { PowerUnitOverviewComponent } from './toolbar/power-unit-overview/power-unit-overview.component';
-import { SmartMeterOverviewComponent } from './toolbar/smart-meter-overview/smart-meter-overview.component';
 import { SmartHomeDetailsComponent } from './toolbar/smart-home-details/smart-home-details.component';
 import { ElectricalDeviceDetailsComponent } from './details/electrical-device-details/electrical-device-details.component';
 import { PowerChargerDetailsComponent } from './details/power-charger-details/power-charger-details.component';
@@ -58,7 +57,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     PowerChargerOverviewComponent,
     PowerStorageOverviewComponent,
     PowerUnitOverviewComponent,
-    SmartMeterOverviewComponent,
     SmartHomeDetailsComponent,
     ElectricalDeviceDetailsComponent,
     PowerChargerDetailsComponent,

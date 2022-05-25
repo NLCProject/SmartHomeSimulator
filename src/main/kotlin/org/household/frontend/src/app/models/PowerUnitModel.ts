@@ -9,6 +9,7 @@ export class PowerUnitModel {
     name: string = '';
     maxPowerGeneration: number = 0;
     currentPowerGeneration: number = 0;
+    enabled: boolean = false;
     type: PowerUnit = null;
     id: string = '';
     organisationId: string = '';

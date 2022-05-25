@@ -64,6 +64,12 @@ class PowerUnitEntity : IscEntity() {
     /**
      *
      */
+    @Column
+    var enabled: Boolean = false
+
+    /**
+     *
+     */
     @ManyToOne(cascade = [CascadeType.MERGE])
     @JoinColumn(name = "smart_home_id")
     lateinit var smartHome: SmartHomeEntity
