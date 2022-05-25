@@ -6,11 +6,11 @@ import org.household.entities.smartHome.SmartHomeEntity
 import org.household.entities.smartHome.SmartHomeModelService
 import org.household.entities.smartHome.SmartHomeRepository
 import org.household.test.TestHelperService
-import org.isc.utils.tests.util.DataComparatorUtil
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.models.NamedModel
 import org.isc.utils.models.filter.FilterParameters
 import org.isc.utils.tests.ModelServiceTest
+import org.isc.utils.tests.util.DataComparatorUtil
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNull

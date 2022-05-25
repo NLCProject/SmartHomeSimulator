@@ -5,14 +5,14 @@ import {ElectricalDevice} from './ElectricalDevice';
  */
 
 export class ElectricalDeviceModel {
-    smartHomeId: string = '';
-    name: string = '';
-    currentPowerConsumption: number = 0;
-    maxPowerConsumption: number = 0;
-    enabled: boolean = false;
+    smartHomeId = '';
+    name = '';
+    currentPowerConsumption = 0;
+    maxPowerConsumption = 0;
+    enabled = false;
     type: ElectricalDevice = null;
-    id: string = '';
-    organisationId: string = '';
-    timestampCreated: number = 0;
-    timestampLastModified: number = 0;
+    id = '';
+    organisationId = '';
+    timestampCreated = 0;
+    timestampLastModified = 0;
 }

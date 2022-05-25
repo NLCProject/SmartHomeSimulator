@@ -66,7 +66,7 @@ class PowerStorageRepositoryTest : RepositoryServiceTest<PowerStorageEntity>() {
 
         assertTrue(devices.isEmpty())
     }
-    
+
     override fun compareEntitiesAndThrow(entity: PowerStorageEntity, savedEntity: PowerStorageEntity) {
         DataComparatorUtil.compareEntitiesAndThrow(entity1 = entity, entity2 = savedEntity)
     }

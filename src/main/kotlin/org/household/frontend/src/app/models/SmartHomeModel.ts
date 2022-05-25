@@ -5,10 +5,10 @@
  */
 
 export class SmartHomeModel {
-    name: string = '';
-    canBeDeleted: boolean = false;
-    id: string = '';
-    organisationId: string = '';
-    timestampCreated: number = 0;
-    timestampLastModified: number = 0;
+    name = '';
+    canBeDeleted = false;
+    id = '';
+    organisationId = '';
+    timestampCreated = 0;
+    timestampLastModified = 0;
 }
