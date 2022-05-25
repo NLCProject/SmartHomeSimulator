@@ -1,13 +1,13 @@
 package org.smart.home.simulator.controllers
 
+import org.isc.utils.genericCrudl.controller.CrossOriginData
+import org.isc.utils.genericCrudl.controller.GenericController
 import org.smart.home.simulator.dto.PowerChargerModel
 import org.smart.home.simulator.entities.powerCharger.PowerChargerEntity
 import org.smart.home.simulator.entities.powerCharger.PowerChargerFilterService
 import org.smart.home.simulator.entities.powerCharger.PowerChargerModelService
 import org.smart.home.simulator.entities.powerCharger.PowerChargerService
 import org.smart.home.simulator.services.authentication.interfaces.IAuthenticationService
-import org.isc.utils.genericCrudl.controller.CrossOriginData
-import org.isc.utils.genericCrudl.controller.GenericController
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller

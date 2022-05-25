@@ -1,15 +1,15 @@
 package test.filterServiceTest
 
-import org.smart.home.simulator.Application
-import org.smart.home.simulator.entities.powerCharger.PowerChargerEntity
-import org.smart.home.simulator.entities.powerCharger.PowerChargerFilterService
-import org.smart.home.simulator.entities.powerCharger.PowerChargerRepository
-import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.models.filter.FilterOptions
 import org.isc.utils.models.filter.FilterParameters
 import org.isc.utils.tests.FilterServiceTest
 import org.junit.jupiter.api.Assertions.assertTrue
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.entities.powerCharger.PowerChargerEntity
+import org.smart.home.simulator.entities.powerCharger.PowerChargerFilterService
+import org.smart.home.simulator.entities.powerCharger.PowerChargerRepository
+import org.smart.home.simulator.test.TestHelperService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import javax.annotation.PostConstruct

@@ -1,5 +1,8 @@
 package test.entityServiceTest
 
+import org.isc.utils.models.CurrentUser
+import org.isc.utils.tests.EntityServiceTest
+import org.junit.jupiter.api.Test
 import org.smart.home.simulator.Application
 import org.smart.home.simulator.dto.PowerChargerModel
 import org.smart.home.simulator.entities.powerCharger.PowerChargerEntity
@@ -7,9 +10,6 @@ import org.smart.home.simulator.entities.powerCharger.PowerChargerModelService
 import org.smart.home.simulator.entities.powerCharger.PowerChargerRepository
 import org.smart.home.simulator.entities.powerCharger.PowerChargerService
 import org.smart.home.simulator.test.TestHelperService
-import org.isc.utils.models.CurrentUser
-import org.isc.utils.tests.EntityServiceTest
-import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import test.modelServiceTest.PowerChargerModelServiceTest

@@ -1,5 +1,8 @@
 package test.entityServiceTest
 
+import org.isc.utils.models.CurrentUser
+import org.isc.utils.tests.EntityServiceTest
+import org.junit.jupiter.api.Test
 import org.smart.home.simulator.Application
 import org.smart.home.simulator.dto.SmartMeterModel
 import org.smart.home.simulator.entities.smartMeter.SmartMeterEntity
@@ -7,9 +10,6 @@ import org.smart.home.simulator.entities.smartMeter.SmartMeterModelService
 import org.smart.home.simulator.entities.smartMeter.SmartMeterRepository
 import org.smart.home.simulator.entities.smartMeter.SmartMeterService
 import org.smart.home.simulator.test.TestHelperService
-import org.isc.utils.models.CurrentUser
-import org.isc.utils.tests.EntityServiceTest
-import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import test.modelServiceTest.SmartMeterModelServiceTest

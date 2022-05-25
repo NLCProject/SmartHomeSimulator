@@ -1,12 +1,6 @@
 package test.modelServiceTest
 
 import org.isc.utils.enums.IconEnum
-import org.smart.home.simulator.Application
-import org.smart.home.simulator.dto.ElectricalDeviceModel
-import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceEntity
-import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceModelService
-import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceRepository
-import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.models.NamedModel
 import org.isc.utils.models.filter.FilterParameters
@@ -18,6 +12,12 @@ import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.dto.ElectricalDeviceModel
+import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceEntity
+import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceModelService
+import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceRepository
+import org.smart.home.simulator.test.TestHelperService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import javax.annotation.PostConstruct

@@ -1,8 +1,8 @@
 package org.smart.home.simulator.entities.powerStorage
 
-import org.smart.home.simulator.entities.powerStorage.interfaces.IPowerStorageRepository
 import org.isc.utils.genericCrudl.services.RepositoryService
 import org.isc.utils.models.CurrentUser
+import org.smart.home.simulator.entities.powerStorage.interfaces.IPowerStorageRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

@@ -1,12 +1,12 @@
 package org.smart.home.simulator.entities.smartHome
 
+import org.isc.utils.genericCrudl.models.IscEntity
+import org.isc.utils.utils.Ids
 import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceEntity
 import org.smart.home.simulator.entities.powerCharger.PowerChargerEntity
 import org.smart.home.simulator.entities.powerStorage.PowerStorageEntity
 import org.smart.home.simulator.entities.powerUnit.PowerUnitEntity
 import org.smart.home.simulator.entities.smartMeter.SmartMeterEntity
-import org.isc.utils.genericCrudl.models.IscEntity
-import org.isc.utils.utils.Ids
 import javax.persistence.*
 
 /**

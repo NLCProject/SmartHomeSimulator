@@ -1,10 +1,10 @@
 package org.smart.home.simulator.entities.errorLog
 
-import org.smart.home.simulator.dto.ErrorLogModel
 import org.isc.utils.genericCrudl.models.Aspects
 import org.isc.utils.genericCrudl.services.EntityService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.services.dateTime.interfaces.IDateConversionService
+import org.smart.home.simulator.dto.ErrorLogModel
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

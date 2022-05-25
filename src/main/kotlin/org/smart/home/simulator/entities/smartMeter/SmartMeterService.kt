@@ -1,10 +1,10 @@
 package org.smart.home.simulator.entities.smartMeter
 
-import org.smart.home.simulator.dto.SmartMeterModel
-import org.smart.home.simulator.entities.smartHome.SmartHomeRepository
 import org.isc.utils.genericCrudl.models.Aspects
 import org.isc.utils.genericCrudl.services.EntityService
 import org.isc.utils.models.CurrentUser
+import org.smart.home.simulator.dto.SmartMeterModel
+import org.smart.home.simulator.entities.smartHome.SmartHomeRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

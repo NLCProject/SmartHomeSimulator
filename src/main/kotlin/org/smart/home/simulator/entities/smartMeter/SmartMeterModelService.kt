@@ -1,10 +1,10 @@
 package org.smart.home.simulator.entities.smartMeter
 
-import org.smart.home.simulator.dto.SmartMeterModel
 import org.isc.utils.genericCrudl.services.ModelService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.models.NamedModel
 import org.isc.utils.models.filter.FilterParameters
+import org.smart.home.simulator.dto.SmartMeterModel
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

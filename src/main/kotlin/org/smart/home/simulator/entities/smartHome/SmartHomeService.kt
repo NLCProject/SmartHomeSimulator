@@ -1,10 +1,10 @@
 package org.smart.home.simulator.entities.smartHome
 
-import org.smart.home.simulator.dto.SmartHomeModel
 import org.isc.utils.genericCrudl.models.Aspects
 import org.isc.utils.genericCrudl.services.EntityService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.validation.interfaces.IEntityValidationService
+import org.smart.home.simulator.dto.SmartHomeModel
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

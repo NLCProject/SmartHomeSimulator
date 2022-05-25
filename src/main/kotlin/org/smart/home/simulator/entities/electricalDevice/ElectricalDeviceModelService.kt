@@ -1,11 +1,11 @@
 package org.smart.home.simulator.entities.electricalDevice
 
 import org.isc.utils.enums.IconEnum
-import org.smart.home.simulator.dto.ElectricalDeviceModel
 import org.isc.utils.genericCrudl.services.ModelService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.models.NamedModel
 import org.isc.utils.models.filter.FilterParameters
+import org.smart.home.simulator.dto.ElectricalDeviceModel
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

@@ -1,13 +1,13 @@
 package org.smart.home.simulator.controllers
 
+import org.isc.utils.genericCrudl.controller.CrossOriginData
+import org.isc.utils.genericCrudl.controller.GenericController
 import org.smart.home.simulator.dto.SmartMeterModel
 import org.smart.home.simulator.entities.smartMeter.SmartMeterEntity
 import org.smart.home.simulator.entities.smartMeter.SmartMeterFilterService
 import org.smart.home.simulator.entities.smartMeter.SmartMeterModelService
 import org.smart.home.simulator.entities.smartMeter.SmartMeterService
 import org.smart.home.simulator.services.authentication.interfaces.IAuthenticationService
-import org.isc.utils.genericCrudl.controller.CrossOriginData
-import org.isc.utils.genericCrudl.controller.GenericController
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller

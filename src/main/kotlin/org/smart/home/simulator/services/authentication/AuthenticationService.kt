@@ -1,12 +1,12 @@
 package org.smart.home.simulator.services.authentication
 
-import org.smart.home.simulator.services.authentication.interfaces.IAuthenticationService
 import org.isc.utils.enums.Feature
 import org.isc.utils.enums.Role
 import org.isc.utils.enums.UserLanguage
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.serialization.JsonSerialization
 import org.isc.utils.utils.Ids
+import org.smart.home.simulator.services.authentication.interfaces.IAuthenticationService
 import org.springframework.stereotype.Service
 
 @Service

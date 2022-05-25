@@ -1,13 +1,13 @@
 package org.smart.home.simulator.controllers
 
+import org.isc.utils.genericCrudl.controller.CrossOriginData
+import org.isc.utils.genericCrudl.controller.GenericController
 import org.smart.home.simulator.dto.ElectricalDeviceModel
 import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceEntity
 import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceFilterService
 import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceModelService
 import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceService
 import org.smart.home.simulator.services.authentication.interfaces.IAuthenticationService
-import org.isc.utils.genericCrudl.controller.CrossOriginData
-import org.isc.utils.genericCrudl.controller.GenericController
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller

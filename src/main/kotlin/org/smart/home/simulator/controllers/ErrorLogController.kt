@@ -1,13 +1,13 @@
 package org.smart.home.simulator.controllers
 
+import org.isc.utils.genericCrudl.controller.CrossOriginData
+import org.isc.utils.genericCrudl.controller.GenericController
 import org.smart.home.simulator.dto.ErrorLogModel
 import org.smart.home.simulator.entities.errorLog.ErrorLogEntity
 import org.smart.home.simulator.entities.errorLog.ErrorLogFilterService
 import org.smart.home.simulator.entities.errorLog.ErrorLogModelService
 import org.smart.home.simulator.entities.errorLog.ErrorLogService
 import org.smart.home.simulator.services.authentication.interfaces.IAuthenticationService
-import org.isc.utils.genericCrudl.controller.CrossOriginData
-import org.isc.utils.genericCrudl.controller.GenericController
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*

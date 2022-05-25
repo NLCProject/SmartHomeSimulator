@@ -1,12 +1,12 @@
 package test.repositoryTest
 
+import org.isc.utils.models.CurrentUser
+import org.isc.utils.tests.RepositoryServiceTest
+import org.isc.utils.tests.util.DataComparatorUtil
 import org.smart.home.simulator.Application
 import org.smart.home.simulator.entities.smartHome.SmartHomeEntity
 import org.smart.home.simulator.entities.smartHome.SmartHomeRepository
 import org.smart.home.simulator.test.TestHelperService
-import org.isc.utils.models.CurrentUser
-import org.isc.utils.tests.RepositoryServiceTest
-import org.isc.utils.tests.util.DataComparatorUtil
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import javax.annotation.PostConstruct

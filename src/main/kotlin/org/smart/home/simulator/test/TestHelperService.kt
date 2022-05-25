@@ -1,5 +1,7 @@
 package org.smart.home.simulator.test
 
+import org.isc.utils.models.CurrentUser
+import org.isc.utils.utils.Ids
 import org.smart.home.simulator.entities.electricalDevice.ElectricalDevice
 import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceEntity
 import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceRepository
@@ -15,8 +17,6 @@ import org.smart.home.simulator.entities.smartHome.SmartHomeRepository
 import org.smart.home.simulator.entities.smartMeter.FlowDirection
 import org.smart.home.simulator.entities.smartMeter.SmartMeterEntity
 import org.smart.home.simulator.entities.smartMeter.SmartMeterRepository
-import org.isc.utils.models.CurrentUser
-import org.isc.utils.utils.Ids
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import kotlin.random.Random

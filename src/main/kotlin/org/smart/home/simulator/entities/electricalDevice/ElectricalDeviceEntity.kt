@@ -1,8 +1,8 @@
 package org.smart.home.simulator.entities.electricalDevice
 
-import org.smart.home.simulator.entities.smartHome.SmartHomeEntity
 import org.isc.utils.genericCrudl.models.IscEntity
 import org.isc.utils.utils.Ids
+import org.smart.home.simulator.entities.smartHome.SmartHomeEntity
 import javax.persistence.*
 
 /**

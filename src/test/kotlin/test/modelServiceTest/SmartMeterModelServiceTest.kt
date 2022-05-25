@@ -1,11 +1,5 @@
 package test.modelServiceTest
 
-import org.smart.home.simulator.Application
-import org.smart.home.simulator.dto.SmartMeterModel
-import org.smart.home.simulator.entities.smartMeter.SmartMeterEntity
-import org.smart.home.simulator.entities.smartMeter.SmartMeterModelService
-import org.smart.home.simulator.entities.smartMeter.SmartMeterRepository
-import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.models.NamedModel
 import org.isc.utils.models.filter.FilterParameters
@@ -17,6 +11,12 @@ import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.dto.SmartMeterModel
+import org.smart.home.simulator.entities.smartMeter.SmartMeterEntity
+import org.smart.home.simulator.entities.smartMeter.SmartMeterModelService
+import org.smart.home.simulator.entities.smartMeter.SmartMeterRepository
+import org.smart.home.simulator.test.TestHelperService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import javax.annotation.PostConstruct

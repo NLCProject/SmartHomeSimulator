@@ -1,9 +1,9 @@
 package org.smart.home.simulator.entities.errorLog
 
-import org.smart.home.simulator.entities.errorLog.interfaces.IErrorLogRepository
 import org.isc.utils.enums.SortKey
 import org.isc.utils.genericCrudl.services.RepositoryService
 import org.isc.utils.models.CurrentUser
+import org.smart.home.simulator.entities.errorLog.interfaces.IErrorLogRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

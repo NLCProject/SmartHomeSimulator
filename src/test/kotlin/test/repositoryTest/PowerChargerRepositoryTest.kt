@@ -1,14 +1,14 @@
 package test.repositoryTest
 
-import org.smart.home.simulator.Application
-import org.smart.home.simulator.entities.powerCharger.PowerChargerEntity
-import org.smart.home.simulator.entities.powerCharger.PowerChargerRepository
-import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.tests.RepositoryServiceTest
 import org.isc.utils.tests.util.DataComparatorUtil
 import org.isc.utils.utils.Ids
 import org.junit.jupiter.api.Test
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.entities.powerCharger.PowerChargerEntity
+import org.smart.home.simulator.entities.powerCharger.PowerChargerRepository
+import org.smart.home.simulator.test.TestHelperService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import javax.annotation.PostConstruct

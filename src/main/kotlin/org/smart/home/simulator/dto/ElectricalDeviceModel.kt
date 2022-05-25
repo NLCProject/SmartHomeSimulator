@@ -1,10 +1,10 @@
 package org.smart.home.simulator.dto
 
-import org.smart.home.simulator.entities.electricalDevice.ElectricalDevice
 import org.isc.utils.annotations.GenerateTsModel
 import org.isc.utils.annotations.ValidateContent
 import org.isc.utils.enums.ValidationType
 import org.isc.utils.genericCrudl.models.IscModel
+import org.smart.home.simulator.entities.electricalDevice.ElectricalDevice
 
 /**
  *
