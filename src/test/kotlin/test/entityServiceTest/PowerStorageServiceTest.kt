@@ -1,12 +1,12 @@
 package test.entityServiceTest
 
-import org.household.Application
-import org.household.dto.PowerStorageModel
-import org.household.entities.powerStorage.PowerStorageEntity
-import org.household.entities.powerStorage.PowerStorageModelService
-import org.household.entities.powerStorage.PowerStorageRepository
-import org.household.entities.powerStorage.PowerStorageService
-import org.household.test.TestHelperService
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.dto.PowerStorageModel
+import org.smart.home.simulator.entities.powerStorage.PowerStorageEntity
+import org.smart.home.simulator.entities.powerStorage.PowerStorageModelService
+import org.smart.home.simulator.entities.powerStorage.PowerStorageRepository
+import org.smart.home.simulator.entities.powerStorage.PowerStorageService
+import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.tests.EntityServiceTest
 import org.junit.jupiter.api.Test

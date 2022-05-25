@@ -15,7 +15,7 @@ import kotlin.test.assertTrue
 class ControllerPathVerificationTest {
 
     private val logger = LoggerFactory.getLogger(this::class.java)
-    private val projectPackage = "org.household"
+    private val projectPackage = "org.smart.home.simulator"
 
     @Test
     fun getClasses() {

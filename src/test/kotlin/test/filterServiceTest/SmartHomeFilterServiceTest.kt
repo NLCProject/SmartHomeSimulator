@@ -1,10 +1,10 @@
 package test.filterServiceTest
 
-import org.household.Application
-import org.household.entities.smartHome.SmartHomeEntity
-import org.household.entities.smartHome.SmartHomeFilterService
-import org.household.entities.smartHome.SmartHomeRepository
-import org.household.test.TestHelperService
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.entities.smartHome.SmartHomeEntity
+import org.smart.home.simulator.entities.smartHome.SmartHomeFilterService
+import org.smart.home.simulator.entities.smartHome.SmartHomeRepository
+import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.models.filter.FilterOptions
 import org.isc.utils.models.filter.FilterParameters

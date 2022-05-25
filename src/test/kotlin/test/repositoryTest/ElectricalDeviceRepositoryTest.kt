@@ -1,9 +1,9 @@
 package test.repositoryTest
 
-import org.household.Application
-import org.household.entities.electricalDevice.ElectricalDeviceEntity
-import org.household.entities.electricalDevice.ElectricalDeviceRepository
-import org.household.test.TestHelperService
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceEntity
+import org.smart.home.simulator.entities.electricalDevice.ElectricalDeviceRepository
+import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.tests.RepositoryServiceTest
 import org.isc.utils.tests.util.DataComparatorUtil

@@ -10,7 +10,7 @@ class TypescriptModelGeneratorTest {
         TypescriptModelGenerator().generate(
             pathToTypescriptModels = "./src/main/kotlin/org/household/frontend/src/app/models",
             subPackages = listOf("dto"),
-            packageName = "org.household"
+            packageName = "org.smart.home.simulator"
         )
     }
 }

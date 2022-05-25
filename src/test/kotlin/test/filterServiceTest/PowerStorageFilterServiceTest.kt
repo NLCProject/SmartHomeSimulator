@@ -1,10 +1,10 @@
 package test.filterServiceTest
 
-import org.household.Application
-import org.household.entities.powerStorage.PowerStorageEntity
-import org.household.entities.powerStorage.PowerStorageFilterService
-import org.household.entities.powerStorage.PowerStorageRepository
-import org.household.test.TestHelperService
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.entities.powerStorage.PowerStorageEntity
+import org.smart.home.simulator.entities.powerStorage.PowerStorageFilterService
+import org.smart.home.simulator.entities.powerStorage.PowerStorageRepository
+import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.models.filter.FilterOptions
 import org.isc.utils.models.filter.FilterParameters

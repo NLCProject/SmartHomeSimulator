@@ -12,7 +12,7 @@ class I18nKeyGeneratorTest {
     fun generate() {
         I18nKeyGenerator().generate(
             pathToAssets = pathToAssets,
-            packageName = "org.household",
+            packageName = "org.smart.home.simulator",
             pathToSources = "./src/main/kotlin/org/household/frontend/src/app",
             snackbarFunctions = emptyList(),
             additionalI18nKeys = emptyList(),

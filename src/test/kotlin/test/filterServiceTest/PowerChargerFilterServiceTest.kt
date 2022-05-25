@@ -1,10 +1,10 @@
 package test.filterServiceTest
 
-import org.household.Application
-import org.household.entities.powerCharger.PowerChargerEntity
-import org.household.entities.powerCharger.PowerChargerFilterService
-import org.household.entities.powerCharger.PowerChargerRepository
-import org.household.test.TestHelperService
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.entities.powerCharger.PowerChargerEntity
+import org.smart.home.simulator.entities.powerCharger.PowerChargerFilterService
+import org.smart.home.simulator.entities.powerCharger.PowerChargerRepository
+import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.models.filter.FilterOptions
 import org.isc.utils.models.filter.FilterParameters

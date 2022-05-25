@@ -1,12 +1,12 @@
 package test.entityServiceTest
 
-import org.household.Application
-import org.household.dto.SmartHomeModel
-import org.household.entities.smartHome.SmartHomeEntity
-import org.household.entities.smartHome.SmartHomeModelService
-import org.household.entities.smartHome.SmartHomeRepository
-import org.household.entities.smartHome.SmartHomeService
-import org.household.test.TestHelperService
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.dto.SmartHomeModel
+import org.smart.home.simulator.entities.smartHome.SmartHomeEntity
+import org.smart.home.simulator.entities.smartHome.SmartHomeModelService
+import org.smart.home.simulator.entities.smartHome.SmartHomeRepository
+import org.smart.home.simulator.entities.smartHome.SmartHomeService
+import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.tests.EntityServiceTest
 import org.junit.jupiter.api.Test

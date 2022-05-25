@@ -1,9 +1,9 @@
 package test.repositoryTest
 
-import org.household.Application
-import org.household.entities.smartHome.SmartHomeEntity
-import org.household.entities.smartHome.SmartHomeRepository
-import org.household.test.TestHelperService
+import org.smart.home.simulator.Application
+import org.smart.home.simulator.entities.smartHome.SmartHomeEntity
+import org.smart.home.simulator.entities.smartHome.SmartHomeRepository
+import org.smart.home.simulator.test.TestHelperService
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.tests.RepositoryServiceTest
 import org.isc.utils.tests.util.DataComparatorUtil
