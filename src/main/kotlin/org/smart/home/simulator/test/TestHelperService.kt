@@ -53,15 +53,19 @@ class TestHelperService @Autowired constructor(
      *
      */
     fun createElectricalDevice(
-        smartHome: SmartHomeEntity? = null,
+        name: String = Ids.getRandomId(),
+        currentPowerConsumption: Double = getRandomDouble(),
+        maxPowerConsumption: Double = getRandomDouble(),
+        type: ElectricalDevice = ElectricalDevice.values().random(),
         enabled: Boolean = getRandomBoolean(),
+        smartHome: SmartHomeEntity? = null,
         currentUser: CurrentUser
     ): ElectricalDeviceEntity {
         val device = ElectricalDeviceEntity()
-        device.name = Ids.getRandomId()
-        device.currentPowerConsumption = getRandomDouble()
-        device.maxPowerConsumption = getRandomDouble()
-        device.type = ElectricalDevice.values().random()
+        device.name = name
+        device.currentPowerConsumption = currentPowerConsumption
+        device.maxPowerConsumption = maxPowerConsumption
+        device.type = type
         device.enabled = enabled
         device.smartHome = smartHome ?: createSmartHome(currentUser = currentUser)
         device.organisationId = currentUser.organisationId
@@ -72,14 +76,17 @@ class TestHelperService @Autowired constructor(
      *
      */
     fun createPowerCharger(
+        name: String = Ids.getRandomId(),
+        currentChargingRate: Double = getRandomDouble(),
+        maxChargingRate: Double = getRandomDouble(),
         smartHome: SmartHomeEntity? = null,
         enabled: Boolean = getRandomBoolean(),
         currentUser: CurrentUser
     ): PowerChargerEntity {
         val powerCharger = PowerChargerEntity()
-        powerCharger.name = Ids.getRandomId()
-        powerCharger.currentChargingRate = getRandomDouble()
-        powerCharger.maxChargingRate = getRandomDouble()
+        powerCharger.name = name
+        powerCharger.currentChargingRate = currentChargingRate
+        powerCharger.maxChargingRate = maxChargingRate
         powerCharger.enabled = enabled
         powerCharger.smartHome = smartHome ?: createSmartHome(currentUser = currentUser)
         powerCharger.organisationId = currentUser.organisationId
@@ -90,16 +97,21 @@ class TestHelperService @Autowired constructor(
      *
      */
     fun createPowerStorage(
-        smartHome: SmartHomeEntity? = null,
+        name: String = Ids.getRandomId(),
+        currentChargingRate: Double = getRandomDouble(),
+        maxChargingRate: Double = getRandomDouble(),
+        currentPower: Double = getRandomDouble(),
+        maxPower: Double = getRandomDouble(),
         enabled: Boolean = getRandomBoolean(),
+        smartHome: SmartHomeEntity? = null,
         currentUser: CurrentUser
     ): PowerStorageEntity {
         val powerStorage = PowerStorageEntity()
-        powerStorage.name = Ids.getRandomId()
-        powerStorage.currentChargingRate = getRandomDouble()
-        powerStorage.maxChargingRate = getRandomDouble()
-        powerStorage.currentChargingRate = getRandomDouble()
-        powerStorage.maxChargingRate = getRandomDouble()
+        powerStorage.name = name
+        powerStorage.currentChargingRate = currentChargingRate
+        powerStorage.maxChargingRate = maxChargingRate
+        powerStorage.maxPower = maxPower
+        powerStorage.currentPower = currentPower
         powerStorage.enabled = enabled
         powerStorage.smartHome = smartHome ?: createSmartHome(currentUser = currentUser)
         powerStorage.organisationId = currentUser.organisationId
@@ -110,16 +122,20 @@ class TestHelperService @Autowired constructor(
      *
      */
     fun createPowerUnit(
-        smartHome: SmartHomeEntity? = null,
+        name: String = Ids.getRandomId(),
+        currentPowerGeneration: Double = getRandomDouble(),
+        maxPowerGeneration: Double = getRandomDouble(),
+        type: PowerUnit = PowerUnit.values().random(),
         enabled: Boolean = getRandomBoolean(),
+        smartHome: SmartHomeEntity? = null,
         currentUser: CurrentUser
     ): PowerUnitEntity {
         val powerUnit = PowerUnitEntity()
-        powerUnit.name = Ids.getRandomId()
-        powerUnit.currentPowerGeneration = getRandomDouble()
-        powerUnit.maxPowerGeneration = getRandomDouble()
+        powerUnit.name = name
+        powerUnit.currentPowerGeneration = currentPowerGeneration
+        powerUnit.maxPowerGeneration = maxPowerGeneration
         powerUnit.enabled = enabled
-        powerUnit.type = PowerUnit.values().random()
+        powerUnit.type = type
         powerUnit.smartHome = smartHome ?: createSmartHome(currentUser = currentUser)
         powerUnit.organisationId = currentUser.organisationId
         return powerUnitRepository.save(entity = powerUnit, currentUser = currentUser)
@@ -128,15 +144,24 @@ class TestHelperService @Autowired constructor(
     /**
      *
      */
-    fun createSmartMeter(currentUser: CurrentUser): SmartMeterEntity {
+    fun createSmartMeter(
+        name: String = Ids.getRandomId(),
+        currentFlowRate: Double = getRandomDouble(),
+        maxFlowRate: Double = getRandomDouble(),
+        powerExported: Double = getRandomDouble(),
+        powerImported: Double = getRandomDouble(),
+        flowDirection: FlowDirection = FlowDirection.values().random(),
+        smartHome: SmartHomeEntity? = null,
+        currentUser: CurrentUser
+    ): SmartMeterEntity {
         val powerUnit = SmartMeterEntity()
-        powerUnit.name = Ids.getRandomId()
-        powerUnit.currentFlowRate = getRandomDouble()
-        powerUnit.maxFlowRate = getRandomDouble()
-        powerUnit.powerExported = getRandomDouble()
-        powerUnit.powerImported = getRandomDouble()
-        powerUnit.flowDirection = FlowDirection.values().random()
-        powerUnit.smartHome = createSmartHome(currentUser = currentUser)
+        powerUnit.name = name
+        powerUnit.currentFlowRate = currentFlowRate
+        powerUnit.maxFlowRate = maxFlowRate
+        powerUnit.powerExported = powerExported
+        powerUnit.powerImported = powerImported
+        powerUnit.flowDirection = flowDirection
+        powerUnit.smartHome = smartHome ?: createSmartHome(currentUser = currentUser)
         powerUnit.organisationId = currentUser.organisationId
         return smartMeterRepository.save(entity = powerUnit, currentUser = currentUser)
     }
