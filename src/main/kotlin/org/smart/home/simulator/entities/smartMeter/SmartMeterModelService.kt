@@ -30,7 +30,7 @@ class SmartMeterModelService @Autowired constructor(
         return convertToModel(entity = optional.get(), currentUser = currentUser)
     }
 
-    override fun createModel(entity: SmartMeterEntity, model: SmartMeterModel, currentUser: CurrentUser) { }
+    override fun createModel(entity: SmartMeterEntity, model: SmartMeterModel, currentUser: CurrentUser) {}
 
     override fun createAbstractModel(entity: SmartMeterEntity, model: NamedModel, currentUser: CurrentUser) {
         model.firstLine.text = entity.name

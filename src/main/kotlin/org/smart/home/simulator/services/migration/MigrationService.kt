@@ -70,6 +70,7 @@ class MigrationService @Autowired constructor(
                 currentPowerConsumption = it.currentPowerConsumption,
                 maxPowerConsumption = it.maxPowerConsumption,
                 type = it.type,
+                enabled = it.enabled,
                 smartHome = smartHome,
                 currentUser = currentUser
             )
@@ -84,6 +85,7 @@ class MigrationService @Autowired constructor(
                 name = it.name,
                 currentChargingRate = it.currentChargingRate,
                 maxChargingRate = it.maxChargingRate,
+                enabled = it.enabled,
                 smartHome = smartHome,
                 currentUser = currentUser
             )
