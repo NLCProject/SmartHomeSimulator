@@ -80,7 +80,7 @@ class SmartHomeEntity : IscEntity() {
     /**
      *
      */
-    public fun isUnitAttached(): Boolean = electricalDevices.isNotEmpty() ||
+    fun isUnitAttached(): Boolean = electricalDevices.isNotEmpty() ||
         powerChargers.isNotEmpty() ||
         powerStorages.isNotEmpty() ||
         powerUnits.isNotEmpty() ||
