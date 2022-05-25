@@ -50,7 +50,7 @@ export class GenericListComponent {
     if (this.smartHomeId?.length > 0) {
       urlTree = this.router.createUrlTree([`/${this.routerPath}/details`, model.id, this.smartHomeId]);
     } else {
-      urlTree = this.router.createUrlTree([`/${this.routerPath}/details`, model.id])
+      urlTree = this.router.createUrlTree([`/${this.routerPath}/details`, model.id]);
     }
 
     const url = this.router.serializeUrl(urlTree);

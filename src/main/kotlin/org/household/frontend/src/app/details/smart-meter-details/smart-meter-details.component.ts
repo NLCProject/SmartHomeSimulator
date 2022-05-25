@@ -1,14 +1,14 @@
 import {Component, Input, NgZone, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {PromptComponent} from "../../shared/prompt/prompt.component";
-import {ActivatedRoute, Router} from "@angular/router";
-import {TranslationService} from "../../services/translation.service";
-import {MatDialog} from "@angular/material/dialog";
-import {RouterUtilService} from "../../services/router-util.service";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {PromptComponent} from '../../shared/prompt/prompt.component';
+import {ActivatedRoute, Router} from '@angular/router';
+import {TranslationService} from '../../services/translation.service';
+import {MatDialog} from '@angular/material/dialog';
+import {RouterUtilService} from '../../services/router-util.service';
 import { I18nKey } from 'src/app/models/I18nKey';
-import {SmartMeterService} from "../../services/smart-meter.service";
-import {SmartMeterModel} from "../../models/SmartMeterModel";
-import {FlowDirection} from "../../models/FlowDirection";
+import {SmartMeterService} from '../../services/smart-meter.service';
+import {SmartMeterModel} from '../../models/SmartMeterModel';
+import {FlowDirection} from '../../models/FlowDirection';
 
 @Component({
   selector: 'app-smart-meter-details',

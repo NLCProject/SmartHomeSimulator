@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nKey } from 'src/app/models/I18nKey';
-import {ActivatedRoute} from "@angular/router";
-import {SmartHomeService} from "../../services/smart-home.service";
-import {SmartHomeModel} from "../../models/SmartHomeModel";
-import {TranslationService} from "../../services/translation.service";
+import {ActivatedRoute} from '@angular/router';
+import {SmartHomeService} from '../../services/smart-home.service';
+import {SmartHomeModel} from '../../models/SmartHomeModel';
+import {TranslationService} from '../../services/translation.service';
 
 @Component({
   selector: 'app-smart-home-details-overview',
@@ -19,11 +19,6 @@ export class SmartHomeDetailsOverviewComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {
-    this.selectedTab = +JSON.parse(this.route.snapshot.paramMap.get('index'));
-    this.getId();
-  }
-
   public loading = false;
   public id: string;
   public model: SmartHomeModel;
@@ -32,6 +27,11 @@ export class SmartHomeDetailsOverviewComponent implements OnInit {
   private swipeCoordinate: [number, number];
   private swipeTime = 0;
   private numberTabs = 6;
+
+  ngOnInit(): void {
+    this.selectedTab = +JSON.parse(this.route.snapshot.paramMap.get('index'));
+    this.getId();
+  }
 
   private getId(): void {
     this.activatedRoute.params.subscribe(params => {

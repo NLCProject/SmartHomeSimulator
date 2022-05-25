@@ -5,15 +5,15 @@ import {FlowDirection} from './FlowDirection';
  */
 
 export class SmartMeterModel {
-    smartHomeId: string = '';
-    name: string = '';
-    powerExported: number = 0;
-    powerImported: number = 0;
-    currentFlowRate: number = 0;
-    maxFlowRate: number = 0;
+    smartHomeId = '';
+    name = '';
+    powerExported = 0;
+    powerImported = 0;
+    currentFlowRate = 0;
+    maxFlowRate = 0;
     flowDirection: FlowDirection = null;
-    id: string = '';
-    organisationId: string = '';
-    timestampCreated: number = 0;
-    timestampLastModified: number = 0;
+    id = '';
+    organisationId = '';
+    timestampCreated = 0;
+    timestampLastModified = 0;
 }

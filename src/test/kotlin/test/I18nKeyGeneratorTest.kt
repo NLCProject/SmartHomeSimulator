@@ -1,7 +1,6 @@
 package test
 
 import org.isc.utils.tests.I18nKeyGenerator
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import kotlin.test.assertFalse
 

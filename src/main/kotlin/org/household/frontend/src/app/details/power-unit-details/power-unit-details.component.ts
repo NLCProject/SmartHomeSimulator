@@ -1,14 +1,14 @@
 import {Component, NgZone, OnInit} from '@angular/core';
-import {RouterUtilService} from "../../services/router-util.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {TranslationService} from "../../services/translation.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {MatDialog} from "@angular/material/dialog";
-import {PromptComponent} from "../../shared/prompt/prompt.component";
+import {RouterUtilService} from '../../services/router-util.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {TranslationService} from '../../services/translation.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
+import {PromptComponent} from '../../shared/prompt/prompt.component';
 import { I18nKey } from 'src/app/models/I18nKey';
-import {PowerUnitService} from "../../services/power-unit.service";
-import {PowerUnitModel} from "../../models/PowerUnitModel";
-import {PowerUnit} from "../../models/PowerUnit";
+import {PowerUnitService} from '../../services/power-unit.service';
+import {PowerUnitModel} from '../../models/PowerUnitModel';
+import {PowerUnit} from '../../models/PowerUnit';
 
 @Component({
   selector: 'app-power-unit-details',

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {ElectricalDeviceService} from "../../services/electrical-device.service";
+import {ElectricalDeviceService} from '../../services/electrical-device.service';
 
 @Component({
   selector: 'app-electrical-device-overview',

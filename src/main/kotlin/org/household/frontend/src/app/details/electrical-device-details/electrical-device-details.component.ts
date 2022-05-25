@@ -1,13 +1,13 @@
 import {Component, NgZone, OnInit} from '@angular/core';
-import {RouterUtilService} from "../../services/router-util.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {TranslationService} from "../../services/translation.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {MatDialog} from "@angular/material/dialog";
-import {PromptComponent} from "../../shared/prompt/prompt.component";
+import {RouterUtilService} from '../../services/router-util.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {TranslationService} from '../../services/translation.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
+import {PromptComponent} from '../../shared/prompt/prompt.component';
 import { ElectricalDeviceModel } from 'src/app/models/ElectricalDeviceModel';
-import {ElectricalDeviceService} from "../../services/electrical-device.service";
-import {ElectricalDevice} from "../../models/ElectricalDevice";
+import {ElectricalDeviceService} from '../../services/electrical-device.service';
+import {ElectricalDevice} from '../../models/ElectricalDevice';
 import { I18nKey } from 'src/app/models/I18nKey';
 
 @Component({

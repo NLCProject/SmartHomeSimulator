@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SmartHomeService} from "../../services/smart-home.service";
+import {SmartHomeService} from '../../services/smart-home.service';
 
 @Component({
   selector: 'app-smart-home-overview',

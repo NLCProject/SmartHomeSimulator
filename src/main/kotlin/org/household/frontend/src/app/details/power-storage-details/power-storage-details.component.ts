@@ -1,15 +1,15 @@
 import {Component, NgZone, OnInit} from '@angular/core';
-import {RouterUtilService} from "../../services/router-util.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {TranslationService} from "../../services/translation.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {MatDialog} from "@angular/material/dialog";
-import {ElectricalDeviceModel} from "../../models/ElectricalDeviceModel";
-import {ElectricalDevice} from "../../models/ElectricalDevice";
-import {PromptComponent} from "../../shared/prompt/prompt.component";
+import {RouterUtilService} from '../../services/router-util.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {TranslationService} from '../../services/translation.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
+import {ElectricalDeviceModel} from '../../models/ElectricalDeviceModel';
+import {ElectricalDevice} from '../../models/ElectricalDevice';
+import {PromptComponent} from '../../shared/prompt/prompt.component';
 import { I18nKey } from 'src/app/models/I18nKey';
-import {PowerStorageService} from "../../services/power-storage.service";
-import {PowerStorageModel} from "../../models/PowerStorageModel";
+import {PowerStorageService} from '../../services/power-storage.service';
+import {PowerStorageModel} from '../../models/PowerStorageModel';
 
 @Component({
   selector: 'app-power-storage-details',

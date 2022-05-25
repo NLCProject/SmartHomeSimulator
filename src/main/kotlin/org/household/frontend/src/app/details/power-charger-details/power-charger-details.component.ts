@@ -1,13 +1,13 @@
 import {Component, NgZone, OnInit} from '@angular/core';
-import {RouterUtilService} from "../../services/router-util.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {TranslationService} from "../../services/translation.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {MatDialog} from "@angular/material/dialog";
-import {PromptComponent} from "../../shared/prompt/prompt.component";
+import {RouterUtilService} from '../../services/router-util.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {TranslationService} from '../../services/translation.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
+import {PromptComponent} from '../../shared/prompt/prompt.component';
 import { I18nKey } from 'src/app/models/I18nKey';
-import {PowerChargerService} from "../../services/power-charger.service";
-import {PowerChargerModel} from "../../models/PowerChargerModel";
+import {PowerChargerService} from '../../services/power-charger.service';
+import {PowerChargerModel} from '../../models/PowerChargerModel';
 
 @Component({
   selector: 'app-power-charger-details',

@@ -5,8 +5,8 @@ import {PowerChargerDetailsComponent} from './details/power-charger-details/powe
 import {PowerStorageDetailsComponent} from './details/power-storage-details/power-storage-details.component';
 import {PowerUnitDetailsComponent} from './details/power-unit-details/power-unit-details.component';
 import {SmartMeterDetailsComponent} from './details/smart-meter-details/smart-meter-details.component';
-import {SmartHomeOverviewComponent} from "./toolbar/smart-home-overview/smart-home-overview.component";
-import {SmartHomeDetailsOverviewComponent} from "./toolbar/smart-home-details-overview/smart-home-details-overview.component";
+import {SmartHomeOverviewComponent} from './toolbar/smart-home-overview/smart-home-overview.component';
+import {SmartHomeDetailsOverviewComponent} from './toolbar/smart-home-details-overview/smart-home-details-overview.component';
 
 const routes: Routes = [
   {
