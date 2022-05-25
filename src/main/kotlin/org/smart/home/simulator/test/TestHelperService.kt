@@ -37,9 +37,14 @@ class TestHelperService @Autowired constructor(
     /**
      *
      */
-    fun createSmartHome(currentUser: CurrentUser): SmartHomeEntity {
+    fun createSmartHome(
+        id: String = Ids.getRandomId(),
+        name: String = Ids.getRandomId(),
+        currentUser: CurrentUser
+    ): SmartHomeEntity {
         val smartHome = SmartHomeEntity()
-        smartHome.name = Ids.getRandomId()
+        smartHome.id = id
+        smartHome.name = name
         smartHome.organisationId = currentUser.organisationId
         return smartHomeRepository.save(entity = smartHome, currentUser = currentUser)
     }

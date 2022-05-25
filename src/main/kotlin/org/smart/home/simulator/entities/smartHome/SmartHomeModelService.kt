@@ -30,5 +30,6 @@ class SmartHomeModelService @Autowired constructor(
     override fun findAllPageable(filter: FilterParameters, page: Int, currentUser: CurrentUser): List<NamedModel> =
         throw NotImplementedError()
 
-    override fun sortByDescending(elements: List<NamedModel>): List<NamedModel> = elements
+    override fun sortByDescending(elements: List<NamedModel>): List<NamedModel> =
+        elements.sortedBy { it.firstLine.text }
 }

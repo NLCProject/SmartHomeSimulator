@@ -6,6 +6,7 @@ import org.isc.utils.enums.UserLanguage
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.serialization.JsonSerialization
 import org.isc.utils.utils.Ids
+import org.smart.home.simulator.Organisation
 import org.smart.home.simulator.services.authentication.interfaces.IAuthenticationService
 import org.springframework.stereotype.Service
 
@@ -31,7 +32,7 @@ class AuthenticationService : IAuthenticationService, JsonSerialization() {
         fullName = Ids.getRandomId(),
         language = UserLanguage.DE,
         identifier = Ids.getRandomIdentifier(),
-        organisationId = Ids.getEmptyUUID(),
-        organisationName = "ITS"
+        organisationId = Organisation.id,
+        organisationName = Organisation.name
     )
 }
