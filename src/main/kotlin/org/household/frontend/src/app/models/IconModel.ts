@@ -6,6 +6,6 @@ import {IconEnum} from './IconEnum';
 
 export class IconModel {
     icon: IconEnum = null;
-    iconKey = '';
-    i18nKey = '';
+    iconKey: string = '';
+    i18nKey: string = '';
 }

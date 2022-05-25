@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {PowerUnitService} from "../../services/power-unit.service";
+import {PowerUnitService} from '../../services/power-unit.service';
 
 @Component({
   selector: 'app-power-unit-overview',

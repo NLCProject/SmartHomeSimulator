@@ -5,6 +5,6 @@
  */
 
 export class NamedLineModel {
-    text = '';
-    translate = false;
+    text: string = '';
+    translate: boolean = false;
 }

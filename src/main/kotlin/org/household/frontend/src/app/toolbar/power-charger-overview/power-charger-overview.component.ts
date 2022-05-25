@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {PowerChargerService} from "../../services/power-charger.service";
+import {PowerChargerService} from '../../services/power-charger.service';
 
 @Component({
   selector: 'app-power-charger-overview',

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {PowerStorageService} from "../../services/power-storage.service";
+import {PowerStorageService} from '../../services/power-storage.service';
 
 @Component({
   selector: 'app-power-storage-overview',
