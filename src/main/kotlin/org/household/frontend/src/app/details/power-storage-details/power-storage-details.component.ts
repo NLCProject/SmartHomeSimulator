@@ -4,6 +4,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {TranslationService} from "../../services/translation.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
+import {ElectricalDeviceModel} from "../../models/ElectricalDeviceModel";
+import {ElectricalDevice} from "../../models/ElectricalDevice";
 import {PromptComponent} from "../../shared/prompt/prompt.component";
 import { I18nKey } from 'src/app/models/I18nKey';
 import {PowerStorageService} from "../../services/power-storage.service";
@@ -144,7 +146,7 @@ export class PowerStorageDetailsComponent extends RouterUtilService implements O
           currentChargingRate: [null, Validators.compose([Validators.required, Validators.pattern('^[0-9.]*$')])],
           maxChargingRate: [null, Validators.compose([Validators.required, Validators.min(1), Validators.pattern('^[0-9.]*$')])],
           maxPower: [null, Validators.compose([Validators.required, Validators.min(1), Validators.pattern('^[0-9.]*$')])],
-          currentPower: [null, Validators.compose([Validators.required, Validators.min(1), Validators.pattern('^[0-9.]*$')])],
+          currentPower: [null, Validators.compose([Validators.required, Validators.pattern('^[0-9.]*$')])],
           enabled: [null]
         }
     );

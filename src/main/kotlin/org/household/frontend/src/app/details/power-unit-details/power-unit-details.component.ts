@@ -144,8 +144,8 @@ export class PowerUnitDetailsComponent extends RouterUtilService implements OnIn
     this.formGroup = this.formBuilder.group(
         {
           name: [null, Validators.compose([Validators.required])],
-          maxPowerGeneration: [null, Validators.compose([Validators.required, Validators.pattern('^[0-9.]*$')])],
-          currentPowerGeneration: [null, Validators.compose([Validators.required, Validators.min(1), Validators.pattern('^[0-9.]*$')])],
+          maxPowerGeneration: [null, Validators.compose([Validators.required, Validators.min(1), Validators.pattern('^[0-9.]*$')])],
+          currentPowerGeneration: [null, Validators.compose([Validators.required, Validators.pattern('^[0-9.]*$')])],
           enabled: [null],
           type: [null, Validators.compose([Validators.required])]
         }
