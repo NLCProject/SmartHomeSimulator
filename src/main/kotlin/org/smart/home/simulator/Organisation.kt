@@ -1,7 +1,5 @@
 package org.smart.home.simulator
 
-import org.isc.utils.utils.Ids
-
 /**
  *
  */

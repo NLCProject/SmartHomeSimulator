@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional
 class MigrationService @Autowired constructor(
     private val smartHomeRepository: SmartHomeRepository,
     private val testHelperService: TestHelperService
-): IMigrationService {
+) : IMigrationService {
 
     private val logger = LoggerFactory.getLogger(this::class.java)
 

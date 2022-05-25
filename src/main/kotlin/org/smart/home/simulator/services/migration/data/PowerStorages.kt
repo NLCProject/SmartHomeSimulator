@@ -7,7 +7,7 @@ object PowerStorages {
 
     val data = listOf(
         PowerStorage(
-            name = "Energiespeicher",
+            name = "Energiespeicher #1",
             smartHomeId = "83ab1a38-ea46-40b2-8a63-ee61ed57355a",
             currentChargingRate = 0.0,
             maxChargingRate = 1800.0,
@@ -17,7 +17,7 @@ object PowerStorages {
         ),
 
         PowerStorage(
-            name = "Energiespeicher",
+            name = "Energiespeicher #1",
             smartHomeId = "ebe3c27b-364b-45d0-af41-46f411251f99",
             currentChargingRate = 453.0,
             maxChargingRate = 2000.0,
