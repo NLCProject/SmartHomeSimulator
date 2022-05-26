@@ -1,5 +1,23 @@
 # Smart House Simulator
 
+## Docker
+Dockerfiles can be found for backend in directory <b>docker-backend</b>, for frontend at 
+<b>src\main\kotlin\org\smart\home\simulator</b>.
+
+Docker compose file can be found in directory <b>docker-backend</b>.
+
+### Run in Docker
+In order to run the database, backend and frontend via the compose file run the following commands
+<ol>
+    <li>docker build -t org.smart.home.simulator:1.0.0 .</li>
+    <li>docker-compose up</li>
+    <li>Wait until all services has been loaded. Frontend service takes usually the longest (takes 1 or 2 minutes).</li>
+    <li>Open the browser and access the application via <b>http://localhost:4200 </b></li>
+</ol>
+
+<b>Warning</b>The database image exposes its port on 3306. Make sure you don't run any other database instance on your machine
+or just change the port in the compose file (take care that the app uses then the different port too!).
+
 ## Installation
 <b>Warning</b>: An active internet connection is required for the installation.
 
@@ -8,9 +26,9 @@
     <li>Install a SQL database (MySQL recommended)</li>
     <li>Add a database user with username <b>user</b> and password <b>password</b></li>
     <li>Start the database on your local machine on port 3306 (default port)</li>
-    <li>Create the database <b>encryptionvote</b> manually. Tables will be created automatically by the application.</li>
+    <li>Create the database <b>smartHomeSimulator</b> manually. Tables will be created automatically by the application.</li>
     <li>If you use MySQL, search and open the <b>MySQL Command Line Client</b>. Login with password <b>root</b> and
-    enter <b>create database encryptionvote</b>. Click <b>Enter</b>.</li>
+    enter <b>create database smartHomeSimulator</b>. Click <b>Enter</b>.</li>
 </ol>
 
 ### Backend Pre-Requisites
@@ -25,7 +43,7 @@
 <ol>
     <li>Install NodeJs and NPM via <b>https://nodejs.org/en/download/</b></li>
     <li>Install Angular CLI. Run the command <b>npm install -g @angular/cli</b> in your console</li>
-    <li>Go to <b>src/main/kotlin/encryptionvote/frontend</b></li>
+    <li>Go to <b>src\main\kotlin\org\smart\home\simulator</b></li>
     <li>Open the terminal</li>
     <li>Run command <b>npm i --save</b> to load all dependencies</li>
 </ol>
@@ -36,13 +54,13 @@ has been created.
 
 ## Run Frontend Application
 <ol>
-    <li>Go to <b>src/main/kotlin/encryptionvote/frontend</b></li>
+    <li>Go to <b>src\main\kotlin\org\smart\home\simulator</b></li>
     <li>Open the terminal</li>
     <li>Run command <b>ng serve</b></li>
 </ol>
 
 ## Usage
-When backend and frontend is running, open <b>http://localhost:4200/vote </b> in your browser
+When backend and frontend is running, open <b>http://localhost:4200 </b> in your browser
 
 ## License
 The ISC jar library which is used in this project was written by Markus Graf.
