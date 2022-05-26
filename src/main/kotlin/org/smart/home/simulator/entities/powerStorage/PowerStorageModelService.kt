@@ -21,7 +21,11 @@ class PowerStorageModelService @Autowired constructor(
 ) {
 
     /**
+     * Returns all power storages with the given smart home ID.
      *
+     * @param smartHomeId .
+     * @param page Page size. Request parameter.
+     * @return List of named model.
      */
     fun findAllBySmartHomeId(smartHomeId: String, page: Int, currentUser: CurrentUser): List<NamedModel> =
         repositoryService

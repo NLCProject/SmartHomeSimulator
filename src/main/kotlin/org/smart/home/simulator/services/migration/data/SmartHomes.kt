@@ -1,8 +1,5 @@
 package org.smart.home.simulator.services.migration.data
 
-/**
- *
- */
 object SmartHomes {
 
     val data = listOf(
@@ -10,5 +7,5 @@ object SmartHomes {
         SmartHome(name = "Smart Home #2", id = "ebe3c27b-364b-45d0-af41-46f411251f99")
     )
 
-    public class SmartHome(val name: String, val id: String)
+    class SmartHome(val name: String, val id: String)
 }

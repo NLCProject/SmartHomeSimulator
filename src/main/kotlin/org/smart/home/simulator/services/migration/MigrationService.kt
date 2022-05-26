@@ -3,7 +3,7 @@ package org.smart.home.simulator.services.migration
 import org.isc.utils.models.CurrentUser
 import org.isc.utils.tests.CurrentUserFactory
 import org.slf4j.LoggerFactory
-import org.smart.home.simulator.Organisation
+import org.smart.home.simulator.configuration.Organisation
 import org.smart.home.simulator.entities.smartHome.SmartHomeRepository
 import org.smart.home.simulator.services.migration.data.*
 import org.smart.home.simulator.services.migration.interfaces.IMigrationService

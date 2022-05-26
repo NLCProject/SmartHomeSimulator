@@ -12,7 +12,12 @@ class ElectricalDeviceRepository @Autowired constructor(
 ) : RepositoryService<ElectricalDeviceEntity>(repository = repository) {
 
     /**
+     * Returns all electrical devices with the given smart home ID.
      *
+     * @param smartHomeId .
+     * @param page Page size. Request parameter.
+     * @param currentUser .
+     * @return List of entities.
      */
     fun findAllBySmartHomeId(smartHomeId: String, page: Int, currentUser: CurrentUser): List<ElectricalDeviceEntity> {
         checkFeatureAndThrow(currentUser = currentUser)

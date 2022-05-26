@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service
 import kotlin.random.Random
 
 /**
- *
+ * Service is used for testing purpose to create and save valid entities.
  */
 @Service
 class TestHelperService @Autowired constructor(
@@ -31,12 +31,9 @@ class TestHelperService @Autowired constructor(
     private val powerStorageRepository: PowerStorageRepository,
     private val powerUnitRepository: PowerUnitRepository,
     private val smartMeterRepository: SmartMeterRepository,
-    private val smartHomeRepository: SmartHomeRepository,
+    private val smartHomeRepository: SmartHomeRepository
 ) {
 
-    /**
-     *
-     */
     fun createSmartHome(
         id: String = Ids.getRandomId(),
         name: String = Ids.getRandomId(),
@@ -49,9 +46,6 @@ class TestHelperService @Autowired constructor(
         return smartHomeRepository.save(entity = smartHome, currentUser = currentUser)
     }
 
-    /**
-     *
-     */
     fun createElectricalDevice(
         name: String = Ids.getRandomId(),
         currentPowerConsumption: Double = getRandomDouble(),
@@ -72,9 +66,6 @@ class TestHelperService @Autowired constructor(
         return electricalDeviceRepository.save(entity = device, currentUser = currentUser)
     }
 
-    /**
-     *
-     */
     fun createPowerCharger(
         name: String = Ids.getRandomId(),
         currentChargingRate: Double = getRandomDouble(),
@@ -93,9 +84,6 @@ class TestHelperService @Autowired constructor(
         return powerChargerRepository.save(entity = powerCharger, currentUser = currentUser)
     }
 
-    /**
-     *
-     */
     fun createPowerStorage(
         name: String = Ids.getRandomId(),
         currentChargingRate: Double = getRandomDouble(),
@@ -118,9 +106,6 @@ class TestHelperService @Autowired constructor(
         return powerStorageRepository.save(entity = powerStorage, currentUser = currentUser)
     }
 
-    /**
-     *
-     */
     fun createPowerUnit(
         name: String = Ids.getRandomId(),
         currentPowerGeneration: Double = getRandomDouble(),
@@ -141,9 +126,6 @@ class TestHelperService @Autowired constructor(
         return powerUnitRepository.save(entity = powerUnit, currentUser = currentUser)
     }
 
-    /**
-     *
-     */
     fun createSmartMeter(
         name: String = Ids.getRandomId(),
         currentFlowRate: Double = getRandomDouble(),

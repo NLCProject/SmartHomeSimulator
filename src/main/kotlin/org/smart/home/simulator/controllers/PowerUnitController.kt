@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
 /**
- *
+ * REST controller to manage power units.
  */
 @Controller
 @RequestMapping(path = ["power-unit"])
@@ -34,7 +34,11 @@ class PowerUnitController @Autowired constructor(
 ) {
 
     /**
+     * Returns all power units with the given smart home ID.
      *
+     * @param smartHomeId Request parameter.
+     * @param page Page size. Request parameter.
+     * @return List of named model.
      */
     @GetMapping("/findAllBySmartHomeId")
     fun findAllBySmartHomeId(@RequestParam smartHomeId: String, @RequestParam page: Int): ResponseEntity<*> =

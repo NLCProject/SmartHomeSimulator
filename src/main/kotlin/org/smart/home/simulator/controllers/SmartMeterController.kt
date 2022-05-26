@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
 /**
- *
+ * REST controller to manage smart meters.
  */
 @Controller
 @RequestMapping(path = ["smart-meter"])
@@ -34,7 +34,11 @@ class SmartMeterController @Autowired constructor(
 ) {
 
     /**
+     * Returns the smart meter with the given smart home ID. If the ID is unknown or no smart meter found for this ID,
+     * null is returned.
      *
+     * @param smartHomeId Request parameter.
+     * @return Smart meter DTO or null if not found.
      */
     @GetMapping("/findBySmartHomeId")
     fun findBySmartHomeId(@RequestParam smartHomeId: String): ResponseEntity<*> =

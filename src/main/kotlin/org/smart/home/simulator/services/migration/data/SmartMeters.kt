@@ -2,9 +2,6 @@ package org.smart.home.simulator.services.migration.data
 
 import org.smart.home.simulator.entities.smartMeter.FlowDirection
 
-/**
- *
- */
 object SmartMeters {
 
     val data = listOf(

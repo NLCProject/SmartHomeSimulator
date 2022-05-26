@@ -12,7 +12,12 @@ class PowerChargerRepository @Autowired constructor(
 ) : RepositoryService<PowerChargerEntity>(repository = repository) {
 
     /**
+     * Returns all power chargers with the given smart home ID.
      *
+     * @param smartHomeId .
+     * @param page Page size. Request parameter.
+     * @param currentUser .
+     * @return List of entities.
      */
     fun findAllBySmartHomeId(smartHomeId: String, page: Int, currentUser: CurrentUser): List<PowerChargerEntity> {
         checkFeatureAndThrow(currentUser = currentUser)

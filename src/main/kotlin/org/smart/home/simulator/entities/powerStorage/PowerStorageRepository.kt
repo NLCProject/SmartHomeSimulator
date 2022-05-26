@@ -12,7 +12,12 @@ class PowerStorageRepository @Autowired constructor(
 ) : RepositoryService<PowerStorageEntity>(repository = repository) {
 
     /**
+     * Returns all power storages with the given smart home ID.
      *
+     * @param smartHomeId .
+     * @param page Page size. Request parameter.
+     * @param currentUser .
+     * @return List of entities.
      */
     fun findAllBySmartHomeId(smartHomeId: String, page: Int, currentUser: CurrentUser): List<PowerStorageEntity> {
         checkFeatureAndThrow(currentUser = currentUser)

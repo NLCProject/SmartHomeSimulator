@@ -12,7 +12,12 @@ class PowerUnitRepository @Autowired constructor(
 ) : RepositoryService<PowerUnitEntity>(repository = repository) {
 
     /**
+     * Returns all power units with the given smart home ID.
      *
+     * @param smartHomeId .
+     * @param page Page size. Request parameter.
+     * @param currentUser .
+     * @return List of entities.
      */
     fun findAllBySmartHomeId(smartHomeId: String, page: Int, currentUser: CurrentUser): List<PowerUnitEntity> {
         checkFeatureAndThrow(currentUser = currentUser)

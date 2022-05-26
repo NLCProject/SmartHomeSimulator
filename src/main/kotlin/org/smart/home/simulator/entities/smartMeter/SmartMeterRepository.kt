@@ -13,7 +13,12 @@ class SmartMeterRepository @Autowired constructor(
 ) : RepositoryService<SmartMeterEntity>(repository = repository) {
 
     /**
+     * Returns the optional of the smart meter with the given smart home ID. If the ID is unknown or no smart meter
+     * found for this ID, the optional is empty.
      *
+     * @param smartHomeId .
+     * @param currentUser .
+     * @return Optional.
      */
     fun findBySmartHomeId(smartHomeId: String, currentUser: CurrentUser): Optional<SmartMeterEntity> {
         checkFeatureAndThrow(currentUser = currentUser)

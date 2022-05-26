@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
 /**
- *
+ * REST controller to manage power chargers.
  */
 @Controller
 @RequestMapping(path = ["power-charger"])
@@ -34,7 +34,11 @@ class PowerChargerController @Autowired constructor(
 ) {
 
     /**
+     * Returns all power chargers with the given smart home ID.
      *
+     * @param smartHomeId Request parameter.
+     * @param page Page size. Request parameter.
+     * @return List of named model.
      */
     @GetMapping("/findAllBySmartHomeId")
     fun findAllBySmartHomeId(@RequestParam smartHomeId: String, @RequestParam page: Int): ResponseEntity<*> =

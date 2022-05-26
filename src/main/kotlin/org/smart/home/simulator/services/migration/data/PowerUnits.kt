@@ -1,8 +1,5 @@
 package org.smart.home.simulator.services.migration.data
 
-/**
- *
- */
 object PowerUnits {
 
     val data = listOf(

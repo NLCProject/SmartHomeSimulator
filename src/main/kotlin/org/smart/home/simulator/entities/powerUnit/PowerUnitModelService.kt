@@ -21,7 +21,11 @@ class PowerUnitModelService @Autowired constructor(
 ) {
 
     /**
+     * Returns all power units with the given smart home ID.
      *
+     * @param smartHomeId .
+     * @param page Page size. Request parameter.
+     * @return List of named model.
      */
     fun findAllBySmartHomeId(smartHomeId: String, page: Int, currentUser: CurrentUser): List<NamedModel> =
         repositoryService
