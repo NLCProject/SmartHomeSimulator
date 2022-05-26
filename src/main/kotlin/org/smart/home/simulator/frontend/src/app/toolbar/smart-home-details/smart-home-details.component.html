@@ -19,7 +19,7 @@
 <button mat-fab
         class="action-bar-first"
         [class.spinner]="loading"
-        [disabled]="loading || !model || id?.length < 1 || model?.unitAttached"
+        [disabled]="loading || !model || id?.length < 1"
         [matMenuTriggerFor]="menu">
   <mat-icon>edit</mat-icon>
 </button>
@@ -27,11 +27,11 @@
 <mat-menu #menu="matMenu">
   <div fxLayout="column" fxLayoutAlign="center start" style="width: 280px;">
     <button mat-menu-item
-            class="alert-button"
+            [ngClass]="{'alert-button': model?.unitAttached === false}"
             (click)="delete()"
             [class.spinner]="loading"
             [disabled]="loading || model?.unitAttached">
-      <mat-icon class="alert-button">delete</mat-icon>
+      <mat-icon [ngClass]="{'alert-button': model?.unitAttached === false}">delete</mat-icon>
       <span>{{ 'Delete' | translate }}</span>
     </button>
   </div>
