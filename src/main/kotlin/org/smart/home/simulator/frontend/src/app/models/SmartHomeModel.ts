@@ -6,7 +6,7 @@
 
 export class SmartHomeModel {
     name = '';
-    canBeDeleted = false;
+    unitAttached = false;
     id = '';
     organisationId = '';
     timestampCreated = 0;

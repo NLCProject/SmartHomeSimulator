@@ -20,7 +20,7 @@ class SmartHomeModelService @Autowired constructor(
 ) {
 
     override fun createModel(entity: SmartHomeEntity, model: SmartHomeModel, currentUser: CurrentUser) {
-        model.canBeDeleted = !entity.isUnitAttached()
+        model.unitAttached = entity.isUnitAttached()
     }
 
     override fun createAbstractModel(entity: SmartHomeEntity, model: NamedModel, currentUser: CurrentUser) {

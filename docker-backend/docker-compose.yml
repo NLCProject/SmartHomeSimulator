@@ -15,8 +15,8 @@ services:
       - database:/var/lib/mysql
 
   backend:
-    image: org.smart.house.simulator:0.1.2
-    container_name: smartHouseSimulator
+    image: org.smart.home.simulator:1.0.0
+    container_name: smartHomeSimulator
     restart: on-failure
     depends_on:
       - database

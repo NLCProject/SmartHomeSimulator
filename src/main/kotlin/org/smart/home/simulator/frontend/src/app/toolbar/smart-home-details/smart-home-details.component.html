@@ -19,7 +19,7 @@
 <button mat-fab
         class="action-bar-first"
         [class.spinner]="loading"
-        [disabled]="loading || !model || id?.length < 1"
+        [disabled]="loading || !model || id?.length < 1 || model?.unitAttached"
         [matMenuTriggerFor]="menu">
   <mat-icon>edit</mat-icon>
 </button>
@@ -30,7 +30,7 @@
             class="alert-button"
             (click)="delete()"
             [class.spinner]="loading"
-            [disabled]="loading || model?.canBeDeleted === false">
+            [disabled]="loading || model?.unitAttached">
       <mat-icon class="alert-button">delete</mat-icon>
       <span>{{ 'Delete' | translate }}</span>
     </button>

@@ -20,5 +20,5 @@ class SmartHomeModel : IscModel() {
     /**
      * Is true if another entity is assigned to this (e.g. electrical device or power unit).
      */
-    var canBeDeleted: Boolean = false
+    var unitAttached: Boolean = false
 }
