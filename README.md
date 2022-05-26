@@ -62,6 +62,10 @@ has been created.
 ## Usage
 When backend and frontend is running, open <b>http://localhost:4200 </b> in your browser
 
+## Tests
+Tests can be found in the test package. The ISC library framework generates all tests for the
+repository, model and entity services. Currently 381 tests are performed automatically.
+
 ## License
 The ISC jar library which is used in this project was written by Markus Graf.
 
