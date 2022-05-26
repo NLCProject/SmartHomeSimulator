@@ -1,3 +1,3 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
-COPY OneMove.jar OneMove.jar
-ENTRYPOINT ["java", "-jar", "OneMove.jar"]
+COPY SmartHomeSimulator.jar SmartHomeSimulator.jar
+ENTRYPOINT ["java", "-jar", "SmartHomeSimulator.jar"]

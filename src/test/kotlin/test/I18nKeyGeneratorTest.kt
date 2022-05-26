@@ -1,9 +1,11 @@
 package test
 
 import org.isc.utils.tests.I18nKeyGenerator
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import kotlin.test.assertFalse
 
+@Disabled
 class I18nKeyGeneratorTest {
 
     private val pathToAssets = "./src/main/kotlin/org/smart/home/simulator/frontend/src/assets/i18n"

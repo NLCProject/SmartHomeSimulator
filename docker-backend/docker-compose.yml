@@ -5,7 +5,7 @@ services:
     container_name: database
     restart: always
     environment:
-      MYSQL_DATABASE: smartHomeSimulator
+      MYSQL_DATABASE: its
       MYSQL_USER: user
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: root
@@ -15,13 +15,25 @@ services:
       - database:/var/lib/mysql
 
   backend:
-    image: org.smart.house.simulator:0.1.0
-    container_name: songservice
+    image: org.smart.house.simulator:0.1.2
+    container_name: smartHouseSimulator
     restart: on-failure
     depends_on:
       - database
     ports:
-      - "8001:8080"
+      - "8080:8080"
+    environment:
+      SPRING_APPLICATION_JSON: '{
+                  "spring.datasource.url": "jdbc:mysql://database:3306/its"
+                }'
+
+  angular-service:
+    container_name: angularContainer
+    build: ../src/main/kotlin/org/smart/home/simulator/frontend
+    volumes:
+      - '../src/main/kotlin/org/smart/home/simulator/frontend:/usr/src/app'
+    ports:
+      - '4200:4200'
 
 volumes:
   database: {}

@@ -1,8 +1,10 @@
 package test
 
 import org.isc.utils.tests.TypescriptModelGenerator
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
+@Disabled
 class TypescriptModelGeneratorTest {
 
     @Test

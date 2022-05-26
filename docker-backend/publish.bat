@@ -10,7 +10,7 @@ call .\gradlew ktlintFormat
 echo "ng lint with fixing"
 cd .\src\main\kotlin\org\smart\home\simulator\frontend
 call ng lint --fix
-cd ..\..\..\..\..\
+cd ..\..\..\..\..\..\..\..\
 
 echo "-- BUILDING JAR --"
 echo "Gradle build with tests
