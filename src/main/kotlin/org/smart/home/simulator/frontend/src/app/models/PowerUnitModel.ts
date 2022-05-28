@@ -5,14 +5,14 @@ import {PowerUnit} from './PowerUnit';
  */
 
 export class PowerUnitModel {
-    smartHomeId = '';
-    name = '';
-    maxPowerGeneration = 0;
-    currentPowerGeneration = 0;
+    smartHomeId: string = '';
+    name: string = '';
+    maxPowerGeneration: number = 0;
+    currentPowerGeneration: number = 0;
     type: PowerUnit = null;
-    enabled = false;
-    id = '';
-    organisationId = '';
-    timestampCreated = 0;
-    timestampLastModified = 0;
+    enabled: boolean = false;
+    id: string = '';
+    organisationId: string = '';
+    timestampCreated: number = 0;
+    timestampLastModified: number = 0;
 }

@@ -3,16 +3,23 @@ package test
 import org.isc.utils.tests.I18nKeyGenerator
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
+import org.smart.home.simulator.Application
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.SpringBootTest
 import kotlin.test.assertFalse
 
-@Disabled
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = [Application::class])
 class I18nKeyGeneratorTest {
+
+    @Autowired
+    private lateinit var service: I18nKeyGenerator
 
     private val pathToAssets = "./src/main/kotlin/org/smart/home/simulator/frontend/src/assets/i18n"
 
     @Test
+    @Disabled
     fun generate() {
-        I18nKeyGenerator().generate(
+        service.generate(
             pathToAssets = pathToAssets,
             packageName = "org.smart.home.simulator",
             pathToSources = "./src/main/kotlin/org/smart/home/simulator/frontend/src/app",
@@ -22,17 +29,7 @@ class I18nKeyGeneratorTest {
             topLevelFoldersToInclude = listOf("details", "generics", "shared", "toolbar")
         )
 
-        assertFalse(I18nKeyGenerator().hasDuplicatedKeys(pathToAssets = pathToAssets))
-        assertFalse(I18nKeyGenerator().hasInvalidKeys(pathToAssets = pathToAssets))
-    }
-
-    @Test
-    fun checkForInvalidKeys() {
-        assertFalse(I18nKeyGenerator().hasInvalidKeys(pathToAssets = pathToAssets))
-    }
-
-    @Test
-    fun checkForDuplicatedKeys() {
-        assertFalse(I18nKeyGenerator().hasDuplicatedKeys(pathToAssets = pathToAssets))
+        assertFalse(service.hasDuplicatedKeys(pathToAssets = pathToAssets))
+        assertFalse(service.hasInvalidKeys(pathToAssets = pathToAssets))
     }
 }

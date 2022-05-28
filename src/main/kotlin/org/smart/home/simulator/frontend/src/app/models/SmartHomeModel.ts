@@ -5,10 +5,10 @@
  */
 
 export class SmartHomeModel {
-    name = '';
-    unitAttached = false;
-    id = '';
-    organisationId = '';
-    timestampCreated = 0;
-    timestampLastModified = 0;
+    name: string = '';
+    unitAttached: boolean = false;
+    id: string = '';
+    organisationId: string = '';
+    timestampCreated: number = 0;
+    timestampLastModified: number = 0;
 }
