@@ -1,4 +1,4 @@
-# Smart House Simulator
+# Smart Home Simulator
 
 ## Docker
 Dockerfiles can be found for backend in directory <b>docker-backend</b>, for frontend at 
