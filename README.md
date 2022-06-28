@@ -15,7 +15,7 @@ In order to run the database, backend and frontend via the compose file run the 
     <li>Open the browser and access the application via <b>http://localhost:4200 </b></li>
 </ol>
 
-<b>Warning</b>The database image exposes its port on 3306. Make sure you don't run any other database instance on your machine
+<b>Warning</b>: The database image exposes its port on 3306. Make sure you don't run any other database instance on your machine
 or just change the port in the compose file (take care that the app uses then the different port too!).
 
 ## Installation
