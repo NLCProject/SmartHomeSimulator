@@ -49,8 +49,8 @@ or just change the port in the compose file (take care that the app uses then th
 </ol>
 
 ## Run Backend Application
-Open <b>Application.kt</b> file and run it either in run or debug mode. Make sure the database is running and the table
-has been created.
+Open <b>Application.kt</b> file and run it either in run or debug mode. Make sure the database is running and the database
+has been created. The tables will be created by the Spring Application at startup.
 
 ## Run Frontend Application
 <ol>
