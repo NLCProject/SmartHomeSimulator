@@ -38,6 +38,7 @@ class PowerUnitModelService @Autowired constructor(
         model.firstLine.text = entity.name
         model.secondLine.text = entity.type.name
         model.secondLine.translate = true
+        model.thirdLine.text = "${entity.currentPowerGeneration}kWh"
 
         if (!entity.enabled)
             model.addIcon(icon = IconEnum.POWER_OFF)

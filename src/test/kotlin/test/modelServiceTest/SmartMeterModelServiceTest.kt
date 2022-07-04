@@ -88,7 +88,7 @@ class SmartMeterModelServiceTest : ModelServiceTest<SmartMeterEntity, SmartMeter
         assertFalse(model.thirdLine.translate)
         assertEquals(entity.name, model.firstLine.text)
         assertEquals(entity.flowDirection.name, model.secondLine.text)
-        assertTrue(model.thirdLine.text.isEmpty())
+        assertEquals("${entity.currentFlowRate}kWh", model.thirdLine.text)
         assertNull(model.thumbnail)
         assertNull(model.data)
         assertTrue(model.icons.isEmpty())

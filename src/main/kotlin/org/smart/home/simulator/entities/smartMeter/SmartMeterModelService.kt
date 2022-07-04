@@ -40,6 +40,7 @@ class SmartMeterModelService @Autowired constructor(
         model.firstLine.text = entity.name
         model.secondLine.text = entity.flowDirection.name
         model.secondLine.translate = true
+        model.thirdLine.text = "${entity.currentFlowRate}kWh"
     }
 
     override fun findAllPageable(filter: FilterParameters, page: Int, currentUser: CurrentUser): List<NamedModel> =

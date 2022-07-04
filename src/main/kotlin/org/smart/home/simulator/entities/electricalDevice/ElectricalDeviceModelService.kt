@@ -38,6 +38,7 @@ class ElectricalDeviceModelService @Autowired constructor(
         model.firstLine.text = entity.name
         model.secondLine.text = entity.type.name
         model.secondLine.translate = true
+        model.thirdLine.text = "${entity.currentPowerConsumption}kWh"
 
         if (!entity.enabled)
             model.addIcon(icon = IconEnum.POWER_OFF)

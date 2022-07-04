@@ -106,7 +106,7 @@ class PowerUnitModelServiceTest : ModelServiceTest<PowerUnitEntity, PowerUnitMod
         assertFalse(model.thirdLine.translate)
         assertEquals(entity.name, model.firstLine.text)
         assertEquals(entity.type.name, model.secondLine.text)
-        assertTrue(model.thirdLine.text.isEmpty())
+        assertEquals("${entity.currentPowerGeneration}kWh", model.thirdLine.text)
         assertNull(model.thumbnail)
         assertNull(model.data)
     }

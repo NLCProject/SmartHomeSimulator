@@ -105,7 +105,7 @@ class PowerStorageModelServiceTest : ModelServiceTest<PowerStorageEntity, PowerS
         assertFalse(model.secondLine.translate)
         assertFalse(model.thirdLine.translate)
         assertEquals(entity.name, model.firstLine.text)
-        assertTrue(model.secondLine.text.isEmpty())
+        assertEquals("${entity.currentChargingRate}kWh", model.secondLine.text)
         assertTrue(model.thirdLine.text.isEmpty())
         assertNull(model.thumbnail)
         assertNull(model.data)

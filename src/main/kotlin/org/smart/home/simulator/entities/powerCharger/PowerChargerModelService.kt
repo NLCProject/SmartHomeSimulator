@@ -36,6 +36,7 @@ class PowerChargerModelService @Autowired constructor(
 
     override fun createAbstractModel(entity: PowerChargerEntity, model: NamedModel, currentUser: CurrentUser) {
         model.firstLine.text = entity.name
+        model.secondLine.text = "${entity.currentChargingRate}kWh"
 
         if (!entity.enabled)
             model.addIcon(icon = IconEnum.POWER_OFF)
