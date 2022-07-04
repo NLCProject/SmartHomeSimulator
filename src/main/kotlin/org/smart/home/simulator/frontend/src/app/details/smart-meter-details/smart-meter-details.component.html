@@ -33,11 +33,12 @@
 </form>
 
 <app-generic-details-save-button
-        [loading]="loading"
-        [routerPath]="routerPath"
-        [disabled]="!formGroup.valid"
-        [isVisible]="isVisible"
-        (updateModel)="updateModel()"></app-generic-details-save-button>
+  class="action-bar-second"
+  [loading]="loading"
+  [routerPath]="routerPath"
+  [disabled]="!formGroup.valid"
+  [isVisible]="isVisible"
+  (updateModel)="updateModel()"></app-generic-details-save-button>
 
 <button mat-fab
         class="action-bar-first"

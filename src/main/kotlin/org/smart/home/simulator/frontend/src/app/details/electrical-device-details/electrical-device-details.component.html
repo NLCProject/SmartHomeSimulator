@@ -31,14 +31,15 @@
 </form>
 
 <app-generic-details-save-button
-        [loading]="loading"
-        [routerPath]="routerPath"
-        [disabled]="!formGroup.valid"
-        [isVisible]="isVisible"
-        (updateModel)="updateModel()"></app-generic-details-save-button>
+  class="action-bar-fourth"
+  [loading]="loading"
+  [routerPath]="routerPath"
+  [disabled]="!formGroup.valid"
+  [isVisible]="isVisible"
+  (updateModel)="updateModel()"></app-generic-details-save-button>
 
 <button mat-fab
-        class="action-bar-first"
+        class="action-bar-third"
         [class.spinner]="loading"
         [disabled]="loading || !model || id?.length < 1"
         [matMenuTriggerFor]="menu">
