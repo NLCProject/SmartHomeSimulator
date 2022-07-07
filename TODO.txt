@@ -1,0 +1,2 @@
+- PDF of architecture
+- Gitlab build pipeline
